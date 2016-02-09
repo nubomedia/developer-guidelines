@@ -1,0 +1,8 @@
+site_name: NUBOMEDIA Developer Guidelines
+pages:
+- ['index.md', 'Introduction', 'Overview']
+- ['application-models.md', 'Application', 'Application models']
+- ['application-build.md', 'Application', 'Build an app']
+- ['paas-api.md', 'PaaS-Manager', 'PaaS-API']
+- ['paas-gui.md', 'PaaS-Manager', 'PaaS-GUI']
+theme: readthedocs
