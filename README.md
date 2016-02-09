@@ -1,5 +1,7 @@
 # Docs
 
+[![Documentation Status](https://readthedocs.org/projects/nubomedia-developer-guidelines/badge/?version=latest)](http://nubomedia-developer-guidelines.readthedocs.org/en/latest/?badge=latest)
+
 ## How to generate the documentation html
 
 we are using mkdocs (http://www.mkdocs.org/) so that you can generate html files out of md. 
