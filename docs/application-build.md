@@ -1,0 +1,39 @@
+### APIs
+In order to deploy your application on the NUBOMEDIA Cloud Platform, there are there main libraries to include as dependency to your projects.
+These libraries extend the Kurento libraries with functionalities on how to obtain network resources for example the IP address of the Kurento Media Server.
+The next sections below provide an overview of each library, how to obtain the library and how to include it into your project.
+
+### NUBOMEDIA Media Client (NMC) Library
+The NMC library provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server (KMS) IP.
+
+#### KMS Auto Discovery Process
+Kurento Client discovers KMS with the following procedure:
+
+1. If there are a system property with the value “kms.url”, its value will be returned
+1. If the file ```~/.kurento/config.properties``` doesn’t exist, the default value ```ws://127.0.0.1:8888/kurento``` will be returned
+1. If the file ```“~/.kurento/config.properties”``` exists:
+  1. If the property “kms.url” exists in the file, its value will be returned. For example, if the file has the following content:
+  ```
+  kms.url: ws://4.4.4.4:9999/kurento
+  ```
+  The value “ws://4.4.4.4:9999/kurento” will be returned.
+  
+  1. If the property “kms.url.provider” exists in the file, it should contain the name of a class that will be used to obtain the KMS url. 
+  In this case:
+ 
+  ```
+  kms.url.provider:de.fhg.fokus.nubomedia.kmc.KmsUrlProvider
+  ```
+  The class ```de.fhg.fokus.nubomedia.kmc.KmsUrlProvider``` will be instantiated with its default constructor. 
+
+This class is a class in the NMC library which implements the interface ```org.kurento.client.internal.KmsProvider```. 
+This interface provides the following methods:
+
+```
+String reserveKms(String id) throws NotEnoughResourcesException;
+String reserveKms(String id, int loadPoints) throws NotEnoughResourcesException;
+void releaseKms(String id);
+```
+The method “reserveKms()” will be invoked and its value returned. If NotEnoughResourcesException exception is thrown, it will be thrown in KurentoClient.create() method.
+
+
