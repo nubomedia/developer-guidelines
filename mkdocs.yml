@@ -3,6 +3,8 @@ pages:
 - ['index.md', 'Introduction', 'Overview']
 - ['application-models.md', 'Application', 'Application models']
 - ['application-build.md', 'Application', 'Build an app']
+- ['nubomedia-media-client.md', 'Application', 'NUBOMEDIA Media Client']
+- ['nubomedia-repository-client.md', 'Application', 'NUBOMEDIA Repository Client']
 - ['paas-api.md', 'PaaS-Manager', 'PaaS-API']
 - ['paas-gui.md', 'PaaS-Manager', 'PaaS-GUI']
 theme: readthedocs
