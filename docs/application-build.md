@@ -28,7 +28,7 @@ Simply include it on your project's pom.xml file as describe below, then run the
 	</dependency>
 </dependencies>
 ```
-**NOTE: At the time of writing the release version is 1.0. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.
+*NOTE: At the time of writing the release version is 1.0. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.*
 
 #### KMS Auto Discovery Process
 Kurento Client discovers KMS with the following procedure:
