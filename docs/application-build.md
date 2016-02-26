@@ -61,3 +61,43 @@ void releaseKms(String id);
 The method ```reserveKms()``` will be invoked and its value returned. If ```NotEnoughResourcesException``` exception is thrown, it will be thrown in KurentoClient.create() method.
 
 
+#### REST Interface to NUBOMEDIA Virtual Network Function (VNF)
+In conjunction to implementing the ```org.kurento.client.internal.KmsProvider``` this library uses a simple REST client to interact with VNF. This section is not necessary important for developing your application, but so you know how everything glues together, here are a few technical explanations.
+
+During deploying on the NUBOMEDIA PaaS, some envirnoment variables are set by the NUBOMEDIA PaaS Manager on the application container with the address on which the VNF can be reached and also a Virtual Network Function Identifier for your application is created. The ```VNFRService``` interface provides the following API:
+```
+	/**
+	 * Returns a list of VNFRs managed by the Elastic Media Manager
+	 * @return a list of all virtual network function records
+	 */
+	public List<VirtualNetworkFunctionRecord> getListRegisteredVNFR();
+	
+	/**
+	 * Returns a list with detailed information about all apps registered to the VNFR with this identifier
+	 * @param vnfrId - the virtual network function record identifier
+	 * @return list - the list of application records
+	 */
+	public List<ApplicationRecord> getListRegisteredApplications(String vnfrId);
+	
+	/**
+	 * Registers a new App to the VNFR with a specific VNFR ID
+	 * @param loadPoints - capacity
+	 * @param externalAppId - application identifier
+	 * @return ApplicationRecord - the application's record
+	 */
+	public ApplicationRecord registerApplication(String externalAppId, int loadPoints) 
+		throws NotEnoughResourcesException;
+	
+	/**
+	 * Unregisters an App to the VNFR with the specific internal application identify
+	 * @param internalAppId - identifier of the registered application on the VNFR
+	 */
+	public void unregisterApplication(String internalAppId) throws NotEnoughResourcesException;
+	
+	/**
+	 * Sends a heart beat to the elastic media manager as a keep alive mechanism for registered sessions
+	 * @param internalAppId - the internal application identifier
+	 * @param internalAppId
+	 */
+	public void sendHeartBeat(String internalAppId);
+```
