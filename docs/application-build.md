@@ -6,6 +6,30 @@ The next sections below provide an overview of each library, how to obtain the l
 ### NUBOMEDIA Media Client (NMC) Library
 The NMC library provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server (KMS) IP.
 
+#### Getting Started
+This section explains where to obtian the NMC and how to include it on your project. The assumption here is you are a maven Guru. If not, there are plenty of tutorials online to get you started.
+
+The NMC is distributed via Maven can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg).
+Simply include it on your project's pom.xml file as describe below, then run the command ```mvn install```.
+
+```
+<dependencies>
+...
+<dependency>
+<!-- Kurento client dependency -->
+<groupId>org.kurento</groupId>
+	<artifactId>kurento-client</artifactId>
+</dependency>
+<dependency>
+  <!-- Nubomedia client dependency -->
+		<groupId>de.fhg.fokus.nubomedia</groupId>
+		<artifactId>nubomedia-media-client</artifactId>
+		<version>1.0</version>
+	</dependency>
+</dependencies>
+```
+**NOTE: At the time of writing the release version is 1.0. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.
+
 #### KMS Auto Discovery Process
 Kurento Client discovers KMS with the following procedure:
 
@@ -18,7 +42,7 @@ Kurento Client discovers KMS with the following procedure:
   ```
   The value “ws://4.4.4.4:9999/kurento” will be returned.
   
-  1. If the property “kms.url.provider” exists in the file, it should contain the name of a class that will be used to obtain the KMS url. 
+  2. If the property “kms.url.provider” exists in the file, it should contain the name of a class that will be used to obtain the KMS url. 
   In this case:
  
   ```
@@ -34,6 +58,6 @@ String reserveKms(String id) throws NotEnoughResourcesException;
 String reserveKms(String id, int loadPoints) throws NotEnoughResourcesException;
 void releaseKms(String id);
 ```
-The method “reserveKms()” will be invoked and its value returned. If NotEnoughResourcesException exception is thrown, it will be thrown in KurentoClient.create() method.
+The method ```reserveKms()``` will be invoked and its value returned. If ```NotEnoughResourcesException``` exception is thrown, it will be thrown in KurentoClient.create() method.
 
 
