@@ -105,3 +105,6 @@ And here is the connection:
 ```kurentoClient.Create().reserveKms()``` -> get instance of ```de.fhg.fokus.nubomedia.kmc.KmsUrlProvider```-> ```VNFRService.registerApplication()``` return KMSURL or throws ```NotEnoughResourcesException```
 
 If return KMSURL = TRUE then ```VNFRService.sendHeartBeat``` every 1 minute to VNF for the KMS.
+
+Subsequently:
+```kurentoClient.Create().releaseKms()``` -> get instance of ```de.fhg.fokus.nubomedia.kmc.KmsUrlProvider```-> ```VNFRService.unregisterApplication()``` return void or throws ```NotEnoughResourcesException``` -> stopHeartBeatTask();
