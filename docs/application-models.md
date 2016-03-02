@@ -50,4 +50,4 @@ For an extensive list of Docker commands and references use the following resour
 * [Docker Commands](https://docs.docker.com/v1.8/reference/builder/)
 * [Docker Best Practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
 
-### Building from Private Repository
+### Building from Private Repository (TODO)
