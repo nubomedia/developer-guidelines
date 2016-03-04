@@ -1,10 +1,32 @@
-site_name: NUBOMEDIA Developer Guidelines
+site_name: NUBOMEDIA Developer Guide
+site_url: http://www.nubomedia.eu/
+site_description: Development guidelines to create multimedia applications with NUBOMEDIA APIs
+site_author: NUBOMEDIA
+
+repo_url: https://github.com/nubomedia/developer-guidelines
+
 pages:
-- ['index.md', 'Introduction', 'Overview']
-- ['application-models.md', 'Application', 'Application models']
-- ['application-build.md', 'Application', 'Build an app']
-- ['nubomedia-media-client.md', 'Application', 'NUBOMEDIA Media Client']
-- ['nubomedia-repository-client.md', 'Application', 'NUBOMEDIA Repository Client']
-- ['paas-api.md', 'PaaS-Manager', 'PaaS-API']
-- ['paas-gui.md', 'PaaS-Manager', 'PaaS-GUI']
+- What is NUBOMEDIA: index.md
+- Getting started: getting-started.md
+- NUBOMEDIA APIs:
+    - Media API: api/media.md
+    - Repository API: api/repository.md
+    - WebRtcPeer API: api/webrtcpeer.md
+    - Signaling API: api/signaling.md
+    - Room API: api/room.md
+    - Tree API: api/tree.md
+- Tutorials:
+    - Magic-Mirror: tutorial/nubomedia-magic-mirror.md
+    - Repository: tutorial/nubomedia-repository.md
+    - Room: tutorial/nubomedia-room.md
+- PaaS Manager:
+    - Introduction: paas/paas-introduction.md
+    - PaaS API: paas/paas-api.md
+    - PaaS GUI: paas/paas-gui.md
+- Framework tools:
+    - Visual Development Tool: tools/visual-development-tools.md
+    - Video Content Analysis (VCA): tools/video-content-analysis.md
+
+copyright: Copyright &copy; 2016 <a href="http://www.nubomedia.eu/">NUBOMEDIA</a>
+
 theme: readthedocs

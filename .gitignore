@@ -53,3 +53,6 @@ site
 # SublimeText
 
 *.save
+
+# Eclipse
+.project

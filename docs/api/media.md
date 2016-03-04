@@ -1,12 +1,12 @@
-### Overview
+# Overview
 In order to deploy your application on the NUBOMEDIA Cloud Platform, there are there main libraries to include as dependency to your projects.
 These libraries extend the Kurento libraries with functionalities on how to obtain network resources for example the IP address of the Kurento Media Server.
 The next sections below provide an overview of each library, how to obtain the library and how to include it into your project.
 
-### NUBOMEDIA Media Client (NMC) Library
+# NUBOMEDIA Media Client (NMC) Library
 The NMC library provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server (KMS) IP.
 
-#### Getting Started
+## Getting Started
 This section explains where to obtian the NMC and how to include it on your project. The assumption here is you are a maven Guru. If not, there are plenty of tutorials online to get you started.
 
 The NMC is distributed via Maven can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg).
@@ -30,7 +30,7 @@ Simply include it on your project's pom.xml file as describe below, then run the
 ```
 *NOTE: At the time of writing the release version is 1.0.1. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.*
 
-#### KMS Auto Discovery Process
+## KMS Auto Discovery Process
 Kurento Client discovers KMS with the following procedure:
 
 1. If there are a system property with the value “kms.url”, its value will be returned
@@ -61,7 +61,7 @@ void releaseKms(String id);
 The method ```reserveKms()``` will be invoked and its value returned. If ```NotEnoughResourcesException``` exception is thrown, it will be thrown in KurentoClient.create() method.
 
 
-#### REST Interface to NUBOMEDIA Virtual Network Function (VNF)
+## REST Interface to NUBOMEDIA Virtual Network Function (VNF)
 In conjunction to implementing the ```org.kurento.client.internal.KmsProvider``` this library uses a simple REST client to interact with VNF. This section is not necessary important for developing your application, but so you know how everything glues together, here are a few technical explanations.
 
 During deploying on the NUBOMEDIA PaaS, some envirnoment variables are set by the NUBOMEDIA PaaS Manager on the application container with the address on which the VNF can be reached and also a Virtual Network Function Identifier for your application is created. The ```VNFRService``` interface provides the following API:
