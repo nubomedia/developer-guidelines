@@ -50,6 +50,7 @@ For instantiating this application on the NUBOMEDIA PaaS you should create a JSO
 ```
 
 where: 
+
 * ```gitURL``` - the Git repository URL tha contains your project (source or jar), Dockerfile and other files that are necessary to run your application. If the repository is public the link has to be the https version, if is private has to be the ssh version
 *  ```appName``` - is the name of your application as you would want it to appear on the PaaS. This name is used for creating the DNS entry for your application.
 *  ```projectname``` - OpenShift project name under which your application should be deployed. Default value is *nubomedia* don't change for now
@@ -77,5 +78,3 @@ When all values have been entered, click on the ```Create App```button below. Yo
 *PaaS Manager - Create App - Creation status View*
 
 Once the Status = RUNNING, your application has been successfully deployed, and it is running on the PaaS. Click on  ```Applications``` -> ```app ID``` of your application. You should see the ```route`` under which your application is `reachable from the browser. 
-
-
