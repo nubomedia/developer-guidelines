@@ -51,4 +51,3 @@ is divided into the following sections:
     This documentation is under development. If you do not find the
     information you are looking for here, please ask for support in the
     [NUBOMEDIA development mailing
-    list](https://groups.google.com/forum/#!forum/nubomedia-dev).
