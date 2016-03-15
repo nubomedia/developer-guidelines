@@ -37,3 +37,10 @@ is divided into the following sections:
   box, for instance the [Visual Development
   Tool](./tools/visual-development-tools.md), and [Video Content Analysis
   (VCA)](./tools/video-content-analysis.md).
+
+!!! info
+
+    This documentation is under development. If you do not find the
+    information you are looking for here, please ask for support in the
+    [NUBOMEDIA development mailing
+    list](https://groups.google.com/forum/#!forum/nubomedia-dev).

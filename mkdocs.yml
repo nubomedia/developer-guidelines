@@ -27,6 +27,9 @@ pages:
     - Visual Development Tool: tools/visual-development-tools.md
     - Video Content Analysis (VCA): tools/video-content-analysis.md
 
+markdown_extensions:
+    - admonition
+
 copyright: Copyright &copy; 2016 <a href="http://www.nubomedia.eu/">NUBOMEDIA</a>
 
 theme: readthedocs
