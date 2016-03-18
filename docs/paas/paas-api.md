@@ -58,7 +58,7 @@ where:
 *  ```turnServerUsername``` -  The username to be used as credentials to access the TURN server 
 *  ```turnServerPassword``` -  The password to be used as credentail to access the TURN server
 *  ```scaleInOut``` - Scale in or out indicates the MAX number of media servers (KMS) instances that will be instantiates at runtime, by the auto scaling system.
-*  ```scale_out_threshold``` - This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. CHECK which flavor you are going to use before defining this threshold. **NOTE!** Do not put a value lower than the total capacity of your flavor!
+*  ```scale_out_threshold``` - This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. CHECK which flavor you are going to use before defining this threshold. **NOTE! Do not put a value lower than the total capacity of your flavor!**
 *  ```qualityOfService``` -  If enabled it provides dedicated bandwidth levels between media server instances (optional)
 
 
