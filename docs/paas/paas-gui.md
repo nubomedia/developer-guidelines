@@ -51,6 +51,6 @@ where:
 When all values have been entered, click on the ```Create App```button below. Your request will be forwarded to the PaaS Manager and you will be directed the a view similar to the image below, which shows you the status to the creation process. ```Status``` gives you the status of the process. You might want to reload this page incase you see no update to the status field. The ```Load log``` button shows you the real time process status from NUBOMEDIA PaaS.
 
 ![PaaS Manager Gui - Start View](../img/deployed application.png)
-*PaaS Manager - Create App - Creatiion status View*
+*PaaS Manager - Create App - Creation status View*
 
 Once the Status = RUNNING, your application has been successfully deployed, and it is running on the PaaS. Click on  ```Applications``` -> ```app ID``` of your application. You should see the ```route`` under which your application is `reachable from the browser. 
