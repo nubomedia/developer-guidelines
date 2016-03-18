@@ -1,6 +1,6 @@
 # PaaS Manager
 
-This documentation describes how to use the PaaS Manager via the esposed REST APIs. 
+This documentation describes how to use the PaaS Manager via the exposed REST APIs. 
 
 ## Getting Started
 Information on how to access the PaaS Manager interface and credentials needed can be found here: [URL]( https://www.nubomedia.eu/redmine/projects/nubomedia/wiki/Accessing_NUBOMEDIA_PaaS). If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com). 
