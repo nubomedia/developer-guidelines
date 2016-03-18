@@ -3,7 +3,7 @@
 This documentation describes how to use the PaaS Manager via the esposed REST APIs. 
 
 # Getting Started
-Information on how to access the PaaS Manager interface and credentials needed can be found here: [URL]( https://www.nubomedia.eu/redmine/projects/nubomedia/wiki/Accessing_NUBOMEDIA_PaaS). 
+Information on how to access the PaaS Manager interface and credentials needed can be found here: [URL]( https://www.nubomedia.eu/redmine/projects/nubomedia/wiki/Accessing_NUBOMEDIA_PaaS). If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com). 
 Once logged in, on the start view, you should see a blue box with the number of already deployed applications. Click on ```View Details```. Alternatively on the left hand side menu click on ```Applications```. On the next mask above, there is a button ```Create App```. The next section explains in details the procedure on creating your application.
 
 # Deploy an Application
