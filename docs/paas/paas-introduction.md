@@ -1,5 +1,5 @@
 # Guidelines on Building Application
-This section explains the steps necessary in building your application and deploying on the NUBOMEDIA cloud platform. 
+Before you embark on creating your application, here are some necessary guidelines on building and deploying your application on the NUBOMEDIA PaaS. 
 
 # Building from Source Code
 
