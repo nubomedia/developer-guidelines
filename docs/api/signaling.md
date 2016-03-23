@@ -26,7 +26,7 @@ When a RPC call is made, the Server must reply with a Response, except for in th
 * ```id```: This member is required. It must be the same as the value of the id member in the request message. If there was an error in detecting the id in the request message (e.g. Parse error/Invalid Request), it must be Null. Either the result property or error property must be included, but both members must never be included.
 
 
-***Error Property***
+**Error Property**
 When a RPC call encounters an error, the response message must contain the error member with a value that is a JSON object with the following members:
 * ```code```: A Number that indicates the error type that occurred. This must be an integer.
 * ```message```: A String providing a short description of the error. The message should be limited to a concise single sentence.
@@ -70,3 +70,56 @@ The NUBOMEDIA client signaling API is available in ***JavaScript*** for WWW brow
 ```
 As it can be observed, once the client object is created pointing to the appropriate WebSocket address, developers can create the requests messages of their choice and ask the client to send them to the server. As a result, a response message is received that can
 be later analyzed by the client for providing the appropriate processing.
+
+## Example Use Case
+The signaling API can be used for establishing any kind of communication between clients and application server logic. Both the NUBOMEDIA room and tree APIs have been created on top of the signaling API and they can be considered as advanced and realistic examples of using it. However, for the objectives of this document, we wish to introduce a very simple example illustrating how the signaling API is used. To this aim, we are going to program the most simple signaling mechanism we can imagine: an echo.
+
+In the echo signaling, clients send text messages to the server which, in turn, answers back the message to the client. Programming an echo signaling with our signaling API is straightforward. First, we need to determine how to create the signaling messages.
+
+This is quite simple given the JSON-RPC message structure specified above: our signaling message just uses the params field and inserts into it the echo string. After that, we can program the server side logic, which can be implemented with the code below.
+
+```
+  public class EchoJsonRpcHandler extends DefaultJsonRpcHandler<JsonObject>
+  {
+    @Override
+    public void handleRequest(Transaction transaction, Request<JsonObject> request)
+      throws Exception
+    {
+      log.info("Request id:"+request.getId());
+      log.info("Request method:"+request.getMethod());
+      log.info("Request params:"+request.getParams());
+      transaction.sendResponse(request.getParams());
+    }
+  }
+```
+
+The client side is also very simple to create, as it can be observed in code snippet below:
+
+```
+  static class Params
+  {
+    String  text;
+  }
+
+  JsonRpcClient client = new JsonRpcClientWebSocket(“ws://my.ip.com/path”);
+  Params params = new Params();
+  params.text = "Hello world!";
+  Params result = client.sendRequest("echo", params, Params.class);
+  LOG.info("Response:"+result);
+  log.info(result.text);
+  client.close();
+```
+
+## Resources
+**Full Documentation**
+* [Server signaling API](http://doc-kurento-jsonrpc.readthedocs.org/en/latest/)
+* [JavaScript client signaling API](http://doc-kurento-jsonrpc.readthedocs.org/en/latest/)
+* [Android client signaling API](http://jsonrpc-ws-android.readthedocs.org/en/latest/)
+* [iOS client signaling API](http://kurento-ios.readthedocs.org/en/latest/dev_guide.html#json-rpc)
+
+**API Source Code**
+The repositories containing the relevant artifacts involved in this API are the following:
+* [Server signaling API](https://github.com/Kurento/kurento-java/tree/master/kurentojsonrpc)
+* [JavaScrpt signaling API](https://github.com/Kurento/kurento-jsonrpc-js)
+* [Android signaling API](https://github.com/nubomedia-vtt/jsonrpc-ws-android)
+* [iOS signaling API:](https://github.com/nubomediaTI/Kurento-iOS)
