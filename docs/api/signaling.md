@@ -27,6 +27,7 @@ When a RPC call is made, the Server must reply with a Response, except for in th
 
 
 **Error Property**
+
 When a RPC call encounters an error, the response message must contain the error member with a value that is a JSON object with the following members:
 * ```code```: A Number that indicates the error type that occurred. This must be an integer.
 * ```message```: A String providing a short description of the error. The message should be limited to a concise single sentence.
