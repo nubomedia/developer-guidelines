@@ -7,7 +7,7 @@ communication resources they require in a Kurento Media Server instance. The arc
 
 
 
-## Prequisite
+## Prerequisite
 The NUBOMEDIA Room API can be used safely as long as the following requirements are satisfied:
 * The API assumes that all clients participating in a room are based on WebRTC transports. The API does not provide support for other types of RTC transports off-the-shelf.
 * The API is based on the NUBOMEDIA Signaling Protocol (i.e. a custom protocol based on JSON-RPC over WebSocket). Hence, ***the API cannot interoperate with other types of signaling mechanisms such as SIP or XMPP***.
