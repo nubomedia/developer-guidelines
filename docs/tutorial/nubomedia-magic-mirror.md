@@ -57,7 +57,60 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
 
     webRtcEndpoint = new WebRtcEndpoint.Builder(getMediaPipeline()).build();
   }
+```
 
+> It is very important to release this instance of *kurento-client* when the media session is finished. This is implemented in the method `release` of the [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class:
+
+```java
+  public void release() {
+    log.info("Releasing media pipeline {} (session {})", getMediaPipeline().getId(), sessionId);
+    getMediaPipeline().release();
+    log.info("Destroying kurentoClient (session {})", sessionId);
+    getKurentoClient().destroy();
+  }
+```
+
+> This release process can be triggered by two events.
+
+>> 1- On the reception of the `stop` message in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java). This message is sent from the [client-side](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/resources/static/js/index.js) of the application when the user explicitly clicks on the *Stop* button on the GUI:
+
+```javascript
+function stop(stopMessage) {
+	console.log("Stopping video call ...");
+	setState(I_CAN_START);
+	if (webRtcPeer) {
+		webRtcPeer.dispose();
+		webRtcPeer = null;
+
+		if (stopMessage == undefined || stopMessage) {
+		    var message = {
+			    id : 'stop'
+		    }
+		    sendMessage(message);
+		}
+	}
+	hideSpinner(videoInput, videoOutput);
+}
+```
+
+>> 2- When the WebSocket used for signaling between the client and server-side is closed. This event is captured in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java) as follows:
+
+```javascript
+  @Override
+  public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+    log.info("Closed websocket connection of session {}", session.getId());
+    release(session);
+  }
+```
+
+>> In addition, in the [client-side](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/resources/static/js/index.js), the event `onbeforeunload` is captured to close explicitly the WebSocket. This happens for example when user closes directly the browser (instead of clicking the *Stop* button). In the end this a web application, and that situation is very usual. Thus, the application should be implemented properly to release the resources.
+
+```javascript
+var ws = new WebSocket('wss://' + location.host + '/magicmirror');
+
+window.onbeforeunload = function() {
+	ws.close();
+}
 ```
 
 ## Deployment
