@@ -18,7 +18,6 @@ find guidelines on application development, deployment, using the elastic and
 scalability functionalities of the platform. The contents of this documentation
 is divided into the following sections:
 
-
 - [Getting started](./getting-started.md): Introduction to the NUBOMEDIA APIs
   and architecture.
 

@@ -1,5 +1,6 @@
 # Guidelines on Building Application
-This section explains the steps necessary in building your application and deploying on the NUBOMEDIA cloud platform. 
+
+Before you embark on creating your application, here are some necessary guidelines on building and deploying your application on the NUBOMEDIA PaaS. 
 
 # Building from Source Code
 
@@ -54,5 +55,6 @@ For an extensive list of Docker commands and references use the following resour
 * [Docker Commands](https://docs.docker.com/v1.8/reference/builder/)
 * [Docker Best Practices](https://docs.docker.com/engine/articles/dockerfile_best-practices/)
 
-# Building from Private Repository (TODO)
+# Building from Private Repository
+TODO
 
