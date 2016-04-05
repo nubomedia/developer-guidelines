@@ -2,6 +2,7 @@ site_name: NUBOMEDIA Developer Guide
 site_url: http://www.nubomedia.eu/
 site_description: Development guidelines to create multimedia applications with NUBOMEDIA APIs
 site_author: NUBOMEDIA
+site_favicon: favicon.ico
 
 repo_url: https://github.com/nubomedia/developer-guidelines
 
