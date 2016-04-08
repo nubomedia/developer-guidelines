@@ -42,35 +42,76 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
 
     We are in active development. Please take a look to the [Maven Central Repository](http://search.maven.org/) to find out the latest version of the artifacts.
 
-- The way in which the *Kurento Client* is instantiated should be changed. As depicted on [Kurento documentation](http://doc-kurento.readthedocs.org/en/stable/introducing_kurento.html#kurento-api-clients-and-protocol), the Kurento Client is the piece of software aimed to control the **Kurento Media Server (KMS)**. Inside NUBOMEDIA, the instances of KMSs are elastically managed by the platform, scaling in and out depending on the load of the system. In Kurento tutorials, the way of creating Kurento Clients is done by means of Spring Beans, and so, there is a single instance of Kurento Client by application. This makes sense when a single instance of KMS is being used (which is the typical way of working just with Kurento). Inside NUBOMEDIA this is not always true, and therefore we need to create a new instance of *KurentoClient* for every media session. This is implemented in the Java class [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java). As can be seen in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java), each time a *start* message arrives to the application server, a new [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class is created. In the constructor of that class, an instance of *KurentoClient* is created:
+- The way in which the *Kurento Client* is instantiated should be changed. As depicted on [Kurento documentation](http://doc-kurento.readthedocs.org/en/stable/introducing_kurento.html#kurento-api-clients-and-protocol), the Kurento Client is the piece of software aimed to control the **Kurento Media Server (KMS)**. Inside NUBOMEDIA, the instances of KMSs are elastically managed by the platform, scaling in and out depending on the load of the system. In Kurento tutorials, the way of creating Kurento Clients is done by means of Spring Beans, and so, there is a single instance of Kurento Client by application. This makes sense when a single instance of KMS is being used (which is the typical way of working just with Kurento). Inside NUBOMEDIA this is not always true, and therefore we need to create a new instance of *KurentoClient* for every media session. This is implemented in the Java class [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java). As can be seen in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java), each time a *start* message arrives to the application server, a new [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class is created and a new media session is created is created:
 
 ```java
-  public UserSession(String sessionId) {
-    this.sessionId = sessionId;
+  private void start(final WebSocketSession session, JsonObject jsonMessage) {
+    // User session
+    String sessionId = session.getId();
+    UserSession user = new UserSession(sessionId, this);
+    users.put(sessionId, user);
 
+    // Media logic for magic mirror
+    String sdpOffer = jsonMessage.get("sdpOffer").getAsString();
+    String sdpAnswer = user.startSession(session, sdpOffer);
+
+    // Response message
+    JsonObject response = new JsonObject();
+    response.addProperty("id", "startResponse");
+    response.addProperty("sdpAnswer", sdpAnswer);
+    sendMessage(session, new TextMessage(response.toString()));
+  }
+```
+
+> The instantiation of *KurentoClient* and the media logic (i.e., the media pipelines and the media element connectivity) is done in the method `startSession` of the [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class: 
+
+```java
+  public String startSession(final WebSocketSession session, String sdpOffer) {
     // One KurentoClient instance per session
     kurentoClient = KurentoClient.create();
     log.info("Created kurentoClient (session {})", sessionId);
 
-    mediaPipeline = getKurentoClient().createMediaPipeline();
-    log.info("Created Media Pipeline {} (session {})", getMediaPipeline().getId(), sessionId);
+    // Media logic (pipeline and media elements connectivity)
+    mediaPipeline = kurentoClient.createMediaPipeline();
+    log.info("Created Media Pipeline {} (session {})", mediaPipeline.getId(), sessionId);
 
-    webRtcEndpoint = new WebRtcEndpoint.Builder(getMediaPipeline()).build();
+    webRtcEndpoint = new WebRtcEndpoint.Builder(mediaPipeline).build();
+    FaceOverlayFilter faceOverlayFilter = new FaceOverlayFilter.Builder(mediaPipeline).build();
+    faceOverlayFilter.setOverlayedImage("http://files.kurento.org/img/mario-wings.png", -0.35F,
+        -1.2F, 1.6F, 1.6F);
+    webRtcEndpoint.connect(faceOverlayFilter);
+    faceOverlayFilter.connect(webRtcEndpoint);
+
+    // WebRTC negotiation
+    webRtcEndpoint.addOnIceCandidateListener(new EventListener<OnIceCandidateEvent>() {
+      @Override
+      public void onEvent(OnIceCandidateEvent event) {
+        JsonObject response = new JsonObject();
+        response.addProperty("id", "iceCandidate");
+        response.add("candidate", JsonUtils.toJsonObject(event.getCandidate()));
+        handler.sendMessage(session, new TextMessage(response.toString()));
+      }
+    });
+    String sdpAnswer = webRtcEndpoint.processOffer(sdpOffer);
+    webRtcEndpoint.gatherCandidates();
+
+    return sdpAnswer;
   }
 ```
 
-> It is very important to release this instance of *KurentoClient* when the media session is finished. This is implemented in the method `release` of the [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class:
+> It is very important to release this instance of *KurentoClient* when the media session is finished. This is implemented in the method `release` of this class ([UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java)). As can be seen, in this method the media pipeline is also released:
 
 ```java
   public void release() {
     log.info("Releasing media pipeline {} (session {})", getMediaPipeline().getId(), sessionId);
     getMediaPipeline().release();
+
     log.info("Destroying kurentoClient (session {})", sessionId);
     getKurentoClient().destroy();
   }
 ```
 
-> This release process can be triggered by two events.
+> This release process can be triggered by two events:
 
 >> 1- On the reception of the `stop` message in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java). This message is sent from the [client-side](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/resources/static/js/index.js) of the application when the user explicitly clicks on the *Stop* button on the GUI:
 
@@ -103,7 +144,7 @@ function stop(stopMessage) {
   }
 ```
 
->> In addition, in the [client-side](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/resources/static/js/index.js), the event `onbeforeunload` is captured to close explicitly the WebSocket. This happens for example when user closes directly the browser (instead of clicking the *Stop* button). In the end this a web application, and that situation is very usual. Thus, the application should be implemented properly to release the resources.
+>> To handle correctly the WebSocket close, in the [client-side](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/resources/static/js/index.js), the event `onbeforeunload` is captured to close explicitly the WebSocket. This happens for example when user closes directly the browser (instead of clicking the *Stop* button). In the end this a web application, and that situation is very usual. Thus, the application should be implemented properly to release the resources.
 
 ```javascript
 var ws = new WebSocket('wss://' + location.host + '/magicmirror');
