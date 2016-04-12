@@ -27,6 +27,7 @@ pages:
 - Framework tools:
     - Visual Development Tool: tools/visual-development-tools.md
     - Video Content Analysis (VCA): tools/video-content-analysis.md
+- Autonomous Installer: nai/autonomous-installer.md
 
 markdown_extensions:
     - admonition
