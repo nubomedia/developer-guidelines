@@ -46,6 +46,10 @@ is divided into the following sections:
   Tool](./tools/visual-development-tools.md), and [Video Content Analysis
   (VCA)](./tools/video-content-analysis.md).
 
+- NUBOMEDIA provides tools to monitor the applications and media servers
+  that were started by NUBOMEDIA PaaS. The tools are also monitoring the 
+  hardware stats [Monitoring tools](./monitoring-tools/monitoring-tools.md).
+
 !!! info
 
     This documentation is under development. If you do not find the
