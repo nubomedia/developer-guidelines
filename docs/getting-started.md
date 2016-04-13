@@ -238,3 +238,22 @@ The elastic nature of the IaaS enables developers to build multimedia apps that
 scale easily with an increase of usage. IaaS capabilities are exposed through
 APIs that are used by the Virtual Infrastructure Manager to provide hardware
 resources to the upper levels of the NUBOMEDIA IaaS.
+
+The NUBOMEDIA IaaS is based on OpenStack and has two types of compute nodes.
+Some of the compute nodes are based on QEMU-KVM hypervisor and the other types
+of compute nodes are running Docker containers using the nova-docker plugin.
+
+The main services of OpenStach which have been deployed for NUBOMEDIA are:
+Nova, Neutron, Glance, Cinder, Keystone and Horizon. All the services running
+on the IaaS level are available through certain end-points which are following
+OCCI-OGF standards.
+
+For enabling of rapid deployment of new Media Server instances by the MS-VNFM,
+we created a nova-docker patch that pulls all docker container images available
+on Glance on all compute nodes running the Docker as a hypervisor. This way the
+instantiation of new Docker containers inside the IaaS is done in less than one
+second. The IaaS architecture is presented in the following diagram.
+
+![IaaS Architecture](img/IaaS-architecture.png)
+*IaaS Architecture*
+
