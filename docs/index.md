@@ -43,12 +43,13 @@ is divided into the following sections:
 - NUBOMEDIA provides different framework tools aimed to simplify the creation
   of complex multimedia applications. Several tools are provided out of the
   box, for instance the [Visual Development
-  Tool](./tools/visual-development-tools.md), and [Video Content Analysis
-  (VCA)](./tools/video-content-analysis.md).
-
-- NUBOMEDIA provides tools to monitor the applications and media servers
-  that were started by NUBOMEDIA PaaS. The tools are also monitoring the 
-  hardware stats [Monitoring tools](./monitoring-tools/monitoring-tools.md).
+  Tool](./tools/visual-development-tools.md), the [Video Content Analysis
+  (VCA)](./tools/video-content-analysis.md), [monitoring
+  tools](./tools/monitoring-tools.md) for the applications and media servers
+  that were started by NUBOMEDIA PaaS (these tools are also monitoring the
+  hardware stats), and [NUBOMEDIA Autonomous
+  Installer](./tools/autonomous-installer.md) (NAI), which is be able to
+  install the NUBOMEDIA platform into an IaaS environment.
 
 !!! info
 

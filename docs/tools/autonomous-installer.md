@@ -1,9 +1,10 @@
-# NAI - NUBOMEDIA Autonomous Installer
+# NUBOMEDIA Autonomous Installer
 
-The NUBOMEDIA Autonomous Installer is be able to install the NUBOMEDIA platform into an IaaS environment which has already installed a PaaS system.  
+The NUBOMEDIA Autonomous Installer (NAI) is be able to install the NUBOMEDIA platform into an IaaS environment which has already installed a PaaS system.
 
-The IaaS environment should be based on OpenStack Kilo and have some compute nodes running nova-docker.  
-The PaaS should be running OpenShift Origin v3 version 3.1 with the following adjustment:  
+The IaaS environment should be based on OpenStack Kilo and have some compute nodes running nova-docker.
+
+The PaaS should be running OpenShift Origin v3 version 3.1 with the following adjustment:
 - To relax the security in your cluster so that images are not forced to run as a pre-allocated UID, without granting everyone access to the privileged SCC:
 ```
 oc edit scc restricted
@@ -14,11 +15,11 @@ runAsUser:
   type: MustRunAsRange
 ```
 
-Using the Autonomous Installer we are deploying the following:    
-- Kurento Media Server images for both KVM and Docker containers;  
-- The NUBOMEDIA controller image which hosts: OpenBaton, the Generic VNFM, MS-VNFM and the PaaS Manager;  
-- A image hosting TURN and STUN servers;  
-- A monitoring machine with the following tools installed: Graphite, Icinga, Logstash;  
+Using the Autonomous Installer we are deploying the following:
+- Kurento Media Server images for both KVM and Docker containers;
+- The NUBOMEDIA controller image which hosts: OpenBaton, the Generic VNFM, MS-VNFM and the PaaS Manager;
+- A image hosting TURN and STUN servers;
+- A monitoring machine with the following tools installed: Graphite, Icinga, Logstash;
 - A image hosting the debian repository with NUBOMEDIA artifacts;
 
 The entire workflow that should be followed in order to succesfully deploy the NUBOMEDIA platform is presented in the next diagram.
@@ -65,8 +66,8 @@ master_user = 'root'
 master_pass = None
 master_key = 'master_id_rsa'
 ```
-*x.x.x.x* is the public IP address of your OpenStack.  
-*master_user* is a ssh user with root permission on the OpenStack.  
+*x.x.x.x* is the public IP address of your OpenStack.
+*master_user* is a ssh user with root permission on the OpenStack.
 For authentication you should either define the *master_pass* as a string variable betwen queotes or you can copy to the autonomous-installer directory the necessary private key for authenticatin on the master. The private key should not be password proteted.
 
 ### Other variables
@@ -75,7 +76,7 @@ floating_ip_pool = 'external'
 private_key = 'private_key_for_accesssing_instances'
 openshift_ip = 'x.x.x.x'
 ```
-You should define the floating (public) IP pool name for the OpenStack.  
+You should define the floating (public) IP pool name for the OpenStack.
 It is best to also add a public key on the OpenStack tenant you want to deploy NUBOMEDIA and then add the private key file to the autonomous-installer directory in order to allow it to customize the instances after deployment.  
 *x.x.x.x* represents the public IP address of the OpenShift PaaS.
 

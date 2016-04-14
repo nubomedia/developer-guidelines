@@ -13,12 +13,12 @@ An architecture of monitoring tools is presented in the following figure:
 ## Graphite
 
 The tool is allowing the developers to check the performance of media servers from a visual interface. As displayed in the above architecture, media servers are pushing stats to the Graphite tool.
-Once logged on the IaaS platform please access Graphite from top menu: 
+Once logged on the IaaS platform please access Graphite from top menu:
 
 ![NUBOMEDIA IaaS monitoring tools menu](../img/monitoring_menu.png)
 *NUBOMEDIA IaaS monitoring tools menu*
 
-Access the Stats link and you should start a page similar to: 
+Access the Stats link and you should start a page similar to:
 
 ![Graphite stats](../img/graphite_stats.png)
 *Graphite Stats*
