@@ -25,6 +25,11 @@ Access the Stats link and you should start a page similar to:
 
 On Graphite interface you have to select the server that you want to monitor and choose appropriate stats that should be displayed on the right chart.
 
+How to display advanced stats like number of pipelines and elements we highlighted in the following figure:
+
+![Advanced stats](../img/advanced_stats.png)
+*Advanced Stats*
+
 ## Icinga
 
 This open source tool is allowing NUBOMEDIA operators to check the status and power efficiency of NUBOMEDIA hardware infrastructure.
