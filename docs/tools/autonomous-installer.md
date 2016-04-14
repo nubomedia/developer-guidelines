@@ -15,12 +15,12 @@ runAsUser:
   type: MustRunAsRange
 ```
 
-Using the Autonomous Installer we are deploying the following:
-- Kurento Media Server images for both KVM and Docker containers;
-- The NUBOMEDIA controller image which hosts: OpenBaton, the Generic VNFM, MS-VNFM and the PaaS Manager;
-- A image hosting TURN and STUN servers;
-- A monitoring machine with the following tools installed: Graphite, Icinga, Logstash;
-- A image hosting the debian repository with NUBOMEDIA artifacts;
+Using the Autonomous Installer we are deploying the following: 
+- Kurento Media Server images for both KVM and Docker containers; 
+- The NUBOMEDIA controller image which hosts: OpenBaton, the Generic VNFM, MS-VNFM and the PaaS Manager; 
+- A image hosting TURN and STUN servers; 
+- A monitoring machine with the following tools installed: Graphite, Icinga, Logstash; 
+- A image hosting the debian repository with NUBOMEDIA artifacts; 
 
 The entire workflow that should be followed in order to succesfully deploy the NUBOMEDIA platform is presented in the next diagram.
 ![NAI Workflow](../img/NAI-workflow.png)
