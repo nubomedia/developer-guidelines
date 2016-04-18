@@ -21,7 +21,7 @@ To build an application from the jar (an example can be found [here] (https://gi
 * Deploy the application using the PaaS GUI or the REST API
 
 # Building from Public Repository
-Build and packetize you application, make the jar package available on a public git repository.
+Build and packetize your application, make the jar package available on a public git repository.
 
 ## Write a Dockerfile
 Write a Dockerfile to install and run the application on the PaaS, the file has to be located in the same repository of the application. Here is an example of a [sample nubomedia app](https://github.com/acheambe/nubomedia-app):
