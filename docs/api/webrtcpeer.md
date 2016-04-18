@@ -61,14 +61,36 @@ There are several ways to use the NUBOMEDIA WebRtcPeer API:
 
 http://builds.kurento.org/release/6.2.0/js/kurento-client.min.js
 
-2.	By means of NPM (package manager for Node.js):
+1.	By means of NPM (package manager for Node.js):
 
 npm install kurento-utils
 
-3.	By means of Bower (package manager for browser JavaScript):
+1.	By means of Bower (package manager for browser JavaScript):
 
 bower install kurento-utils
 
 There are complete tutorials that show how to use this API in WebRTC applications developed on Java, Node and JavaScript. These tutorials are hosted on GitHub:
-•	Java: https://github.com/Kurento/kurento-tutorial-java
-•	Node: https://github.com/Kurento/kurento-tutorial-node
+* [Java](https://github.com/Kurento/kurento-tutorial-java)
+* [Node] (https://github.com/Kurento/kurento-tutorial-node)
+* [Javascript]( https://github.com/Kurento/kurento-tutorial-js)
+
+## API Availability
+The NUBOMEDIA Repository API is currently available in the following languages:
+* JavaScript for WebRTC browsers (i.e. Chrome and Firefox on all versions since beginning 2015)
+* Java for Android 4.0 and later
+* Objective C for iOS on versions 7.0 and later.
+
+These implementations are described in sections below in this document. These implementations are just a wrapper of the getUserMedia and RTCPeerConnection APIs provided by the WebRTC Chrome stack. Hence, further programming languages might be supported by creating the appropriate wrappers on those APIs.
+
+## Resources
+Full Documentation
+* [Browser WebRtcPeer](http://doc-kurento.readthedocs.org/en/stable/mastering/kurento_utils_js.html)
+* [Android WebRtcPeer](#)
+*	[iOS WebRtcPeer](https://github.com/nubomediaTI/Kurento-iOS)
+
+API Source code
+* [Browser WebRtcPeer](https://github.com/Kurento/kurento-utils-js)
+*	[Androind WebRtcPeer](#)
+*	[iOS WebRtcPeer](http://kurento-ios.readthedocs.org/en/latest/index.html)
+
+
