@@ -37,4 +37,4 @@ JavaScript logic communicates with SpringBoot server by means of WebSocket proto
 
 
 ## Resources
-***
+[TODO]
