@@ -18,8 +18,8 @@ pages:
     - Tree API: api/tree.md
 - Tutorials:
     - Magic-Mirror: tutorial/nubomedia-magic-mirror.md
-    - Room: tutorial/nubomedia-room.md
     - Repository: tutorial/nubomedia-repository.md
+    - Room: tutorial/nubomedia-room.md
 - PaaS Manager:
     - Introduction: paas/paas-introduction.md
     - PaaS API: paas/paas-api.md
