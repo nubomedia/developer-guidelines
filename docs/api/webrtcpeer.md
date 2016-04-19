@@ -85,12 +85,12 @@ These implementations are described in sections below in this document. These im
 ## Resources
 Full Documentation
 * [Browser WebRtcPeer](http://doc-kurento.readthedocs.org/en/stable/mastering/kurento_utils_js.html)
-* [Android WebRtcPeer](#)
-*	[iOS WebRtcPeer](https://github.com/nubomediaTI/Kurento-iOS)
+* [Android WebRtcPeer](http://webrtcpeer-android.readthedocs.org/)
+* [iOS WebRtcPeer](https://github.com/nubomediaTI/Kurento-iOS)
 
 API Source code
 * [Browser WebRtcPeer](https://github.com/Kurento/kurento-utils-js)
-*	[Androind WebRtcPeer](#)
-*	[iOS WebRtcPeer](http://kurento-ios.readthedocs.org/en/latest/index.html)
+* [Android WebRtcPeer](http://webrtcpeer-android.readthedocs.org/)
+* [iOS WebRtcPeer](http://kurento-ios.readthedocs.org/en/latest/index.html)
 
 
