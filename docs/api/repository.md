@@ -17,7 +17,7 @@ Simply include it on your project's pom.xml file as describe below, then run the
 	<dependency>
 		<groupId>org.kurento</groupId>
 		<artifactId>kurento-repository-client</artifactId>
-		<version>6.2.1</version>
+		<version>6.4.0</version>
 </dependency>
 <dependency>
   <!-- Nubomedia repository client dependency -->

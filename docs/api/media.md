@@ -1,36 +1,43 @@
 # Overview
-In order to deploy your application on the NUBOMEDIA Cloud Platform, there are there main libraries to include as dependency to your projects.
-These libraries extend the Kurento libraries with functionalities on how to obtain network resources for example the IP address of the Kurento Media Server.
-The next sections below provide an overview of each library, how to obtain the library and how to include it into your project.
 
-# NUBOMEDIA Media Client (NMC) Library
-The NMC library provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server (KMS) IP.
+The NUBOMEDIA Media API has the objective of exposing NUBOMEDIA Media Capabilities through a pipelining mechanism. The NUBOMEDIA Media API is based on the concept of **Media Element**. A Media Element holds a specific media capability. For example, the media element called *WebRtcEndpoint* holds the capability of sending and receiving WebRTC media streams, the media element called *RecorderEndpoint* has the capability of recording into the file system any media streams it receives.
+
+From the application developer perspective, Media Elements are like Lego pieces: you just need to take the elements needed for an application and connect them following the desired topology. In Kurento jargon, a graph of connected media elements is called a **Media Pipeline**. Hence, when creating a pipeline, developers need to determine the capabilities they want to use (the media elements) and the topology determining which media elements provide media to which other media elements (the connectivity).
+
+NUBOMEDIA inherits the rich toolbox provided by Kurento. For further information please visit the [Kurento documentation](http://doc-kurento.readthedocs.org/en/stable/introducing_kurento.html).
+
+# NUBOMEDIA Media Client (NMC)
+
+In order to deploy your application on the NUBOMEDIA Cloud Platform, there are specific NUBOMEDIA libraries which should be include as dependency to your projects. These libraries extend the Kurento libraries with functionalities on how to obtain network resources for example the IP address of the Kurento Media Server.
+
+The NUBOMEDIA Media Client (NMC) provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server (KMS) IP.
 
 ## Getting Started
-This section explains where to obtian the NMC and how to include it on your project. The assumption here is you are a maven Guru. If not, there are plenty of tutorials online to get you started.
 
-The NMC is distributed via Maven can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg).
-Simply include it on your project's pom.xml file as describe below, then run the command ```mvn install```.
+This section explains where to obtain the NMC and how to include it on your project. The assumption here is you have knowledge about [Maven](https://maven.apache.org/) (if not, there are plenty of tutorials online to get you started). The NMC is distributed via Maven can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg). Simply include it on your project's *pom.xml* file as describe below, then run the command ```mvn install```.
 
 ```
 <dependencies>
-...
-<dependency>
-<!-- Kurento client dependency -->
-<groupId>org.kurento</groupId>
-	<artifactId>kurento-client</artifactId>
-</dependency>
-<dependency>
-  <!-- Nubomedia client dependency -->
-		<groupId>de.fhg.fokus.nubomedia</groupId>
-		<artifactId>nubomedia-media-client</artifactId>
-		<version>1.0.1</version>
-	</dependency>
+   <!-- Kurento client dependency -->
+   <dependency>
+      <groupId>org.kurento</groupId>
+	  <artifactId>kurento-client</artifactId>
+   </dependency>
+
+   <!-- Nubomedia client dependency -->
+   <dependency>
+      <groupId>de.fhg.fokus.nubomedia</groupId>
+      <artifactId>nubomedia-media-client</artifactId>
+      <version>1.0.1</version>
+   </dependency>
 </dependencies>
 ```
-*NOTE: At the time of writing the release version is 1.0.1. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.*
+
+!!! info
+    At the time of writing the release version is 1.0.1. This might change as development evolves, so make sure you have the right version (latest) and replace the version number accordingly.
 
 ## KMS Auto Discovery Process
+
 Kurento Client discovers KMS with the following procedure:
 
 1. If there are a system property with the value “kms.url”, its value will be returned
@@ -62,9 +69,10 @@ The method ```reserveKms()``` will be invoked and its value returned. If ```NotE
 
 
 ## REST Interface to NUBOMEDIA Virtual Network Function (VNF)
+
 In conjunction to implementing the ```org.kurento.client.internal.KmsProvider``` this library uses a simple REST client to interact with VNF. This section is not necessary important for developing your application, but so you know how everything glues together, here are a few technical explanations.
 
-During deploying on the NUBOMEDIA PaaS, some envirnoment variables are set by the NUBOMEDIA PaaS Manager on the application container with the address on which the VNF can be reached and also a Virtual Network Function Identifier for your application is created. The ```VNFRService``` interface provides the following API:
+During deploying on the NUBOMEDIA PaaS, some environment variables are set by the NUBOMEDIA PaaS Manager on the application container with the address on which the VNF can be reached and also a Virtual Network Function Identifier for your application is created. The ```VNFRService``` interface provides the following API:
 ```
 	/**
 	 * Returns a list of VNFRs managed by the Elastic Media Manager

@@ -18,42 +18,45 @@ find guidelines on application development, deployment, using the elastic and
 scalability functionalities of the platform. The contents of this documentation
 is divided into the following sections:
 
-- [Getting started](./getting-started.md): Introduction to the NUBOMEDIA APIs
-  and architecture.
+- An introduction to the NUBOMEDIA APIs and architecture is depicted in the
+  [Getting started](./getting-started.md) section.
 
-- NUBOMEDIA APIs: Detailed description of the different NUBOMEDIA APIs, i.e
-  the [Media API](./api/media.md), [Repository API](./api/repository.md),
-  [WebRtcPeer API](./api/webrtcpeer.md), [Signaling API](./api/signaling.md),
-  [Room API](./api/room.md), and [Tree API](./api/tree.md).
+- The detailed description of the different NUBOMEDIA APIs can be found in the
+  following sections: [Media API](./api/media.md), [Repository
+  API](./api/repository.md), [WebRtcPeer API](./api/webrtcpeer.md), [Signaling
+  API](./api/signaling.md), [Room API](./api/room.md), and [Tree
+  API](./api/tree.md).
 
-- NUBOMEDIA tutorials: Step-to-step information about demos applications
-  created with NUBOMEDIA, namely
-  [nubomedia-magic-mirror](./tutorial/nubomedia-magic-mirror.md) (example of an
-  application using the Media API),
-  [nubomedia-room](./tutorial/nubomedia-room.md) (example of an application
-  using the Room API),
-  [nubomedia-repository](./tutorial/nubomedia-repository.md) (example of an
-  application using the Repository API).
+- The tutorials section contains demo applications showing how to use
+  NUBOMEDIA build different types of multimedia applications. The tutorials are
+  [magic-mirror](./tutorial/nubomedia-magic-mirror.md) (i.e. WebRTC with
+  computer vision and augmented reality techniques),
+  [repository](./tutorial/nubomedia-repository.md) (i.e. media record and
+  playback on the NUBOMEDIA repository), and
+  [room](./tutorial/nubomedia-room.md) (i.e. WebRTC multiconference application
+  using the NUBOMEDIA Room API).
 
 - The [PaaS Manager](./paas/paas-introduction.md) is the part of the system
-  enabling developers to deploy and manage their server-side applications. The
+  enabling developers to deploy and manage NUBOMEDIA applications. The
   capabilities of this component can be accessed by means of the the [PaaS
   API](./paas/paas-api.md) and the [PaaS GUI](./paas/paas-api.md).
 
+- NUBOMEDIA provide seamless integration and access to advanced media
+  processing capabilities such as [Video Content Analysis
+  (VCA)](./filter/video-content-analysis.md) also known as Computer Vision, and
+  [Augmented Reality (AR)](./filter/augmented_reality.md).
+
 - NUBOMEDIA provides different framework tools aimed to simplify the creation
-  of complex multimedia applications. Several tools are provided out of the
-  box, for instance the [Visual Development
-  Tool](./tools/visual-development-tools.md), the [Video Content Analysis
-  (VCA)](./tools/video-content-analysis.md), [monitoring
+  of complex multimedia applications, for instance the [Visual Development
+  Tool](./tools/visual-development-tools.md), [monitoring
   tools](./tools/monitoring-tools.md) for the applications and media servers
   that were started by NUBOMEDIA PaaS (these tools are also monitoring the
   hardware stats), and [NUBOMEDIA Autonomous
   Installer](./tools/autonomous-installer.md) (NAI), which is be able to
   install the NUBOMEDIA platform into an IaaS environment.
 
-!!! info
+# Contact us
 
-    This documentation is under development. If you do not find the
-    information you are looking for here, please ask for support in the
-    [NUBOMEDIA development mailing
-    list](https://groups.google.com/forum/#!forum/nubomedia-dev).
+If you have any doubt, comment, or problem related with NUBOMEDIA, please ask
+for support in the [NUBOMEDIA development mailing
+list](https://groups.google.com/forum/#!forum/nubomedia-dev).
