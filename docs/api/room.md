@@ -37,12 +37,12 @@ Client API
 
 
 ## Resources
-Full Documentation
-* [Room server API official documentation](http://doc-kurento-room.readthedocs.org/en/latest/)
-* [Room protocol API official documentation](http://doc-kurento-room.readthedocs.org/en/latest/websocket_api_room_server.html)
-* [WWW room client API official documentation](http://doc-kurento-room.readthedocs.org/en/latest/client_javascript_api.html)
-* [Android room client API official documentation](http://kurento-room-client-android.readthedocs.org/en/latest/)
-* [iOS room client API official documentation](http://kurento-ios.readthedocs.org/en/latest/dev_guide.html#kurento-room)
+Full Official Documentations
+* [Room server API](http://doc-kurento-room.readthedocs.org/en/latest/)
+* [Room protocol API](http://doc-kurento-room.readthedocs.org/en/latest/websocket_api_room_server.html)
+* [WWW room client API](http://doc-kurento-room.readthedocs.org/en/latest/client_javascript_api.html)
+* [Android room client API](http://kurento-room-client-android.readthedocs.org/en/latest/)
+* [iOS room client API](http://kurento-ios.readthedocs.org/en/latest/dev_guide.html#kurento-room)
 
 
 API Source code
