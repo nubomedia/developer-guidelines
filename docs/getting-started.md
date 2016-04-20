@@ -1,12 +1,46 @@
+# NUBOMEDIA Overview
+
+NUBOMEDIA is an open source elastic cloud **PaaS** (Platform as a Service)
+specifically designed for real-time interactive multimedia services, which
+exposes its capabilities through a simple **APIs**. From the developer’s
+perspective, NUBOMEDIA capabilities are accessed through a set of APIs inspired
+by the popular Web three tier model (see figure below). In this model, web
+developers distinguish three layers:
+
+- The *Client*, typically which consists on a web browser executing the
+  client-side application logic. This logic is typically developed using
+  programming languages such HTML and JavaScript, and with the help of
+  specialized third party APIs (e.g. Angular, Bootstrap, etc.)
+
+- The *Application Server (AS)*, which hosts the server-side application
+  logic. This layer typically contains the business logic of the application.
+
+- The *Service Layer* comprise a number of services that are required for the
+  application to work. In NUBOMEDIA, this layer is composed by a set of
+  **Media Servers** (namely, [Kurento Media
+  Server](doc-kurento.readthedocs.org)) and a **Media Repository** (i.e. the
+  [Kurento Repository](http://doc-kurento-repository.readthedocs.org/)).
+
+The NUBOMEDIA Media Server has the objective of providing the NUBOMEDIA platform
+with a media function capability that can be used for creating a cloud media
+plane with the appropriate media capabilities and suitable for working with
+elastic scalability. This means that the number of media server is controled by
+the NUBOMEDIA PaaS, scaling in and out depending on the load of the system.
+
+The following picture illustrates the main components of NUBOMEDIA. Next
+sections of this page introduces these NUBOMEDIA APIs (Media, Repository,
+WebRtcPeer, Signaling, Room, Tree) and provides a detailed description of the
+NUBOMEDIA archictecture.
+
+![NUBOMEDIA Overview](img/nubomedia-schema.png)
+
+*NUBOMEDIA Overview*
+
 # NUBOMEDIA Development APIs
 
-From the developer’s perspective, NUBOMEDIA capabilities are accessed through a
-set of APIs. Hence, for creating NUBOMEDIA enabled applications developers just
-need to understand these NUBOMEDIA Development APIs so that they may use them
-for creating their rich RTC media applications. The NUBOMEDIA Development API
-stack is architected following the scheme depicted in the following figure.
-This stack offers a complete set of APIs that can be classified in three
-groups: **Media Capabilities APIs**, **Signaling APIs** and
+The NUBOMEDIA Development API stack is architected following the scheme depicted
+in the following figure. This stack offers a complete set of APIs that can be
+classified in three groups: **Media Capabilities APIs**, **Signaling APIs** and
 **Abstract Communication APIs**.
 
 ![NUBOMEDIA API stack](img/nubomedia-apis.png)
@@ -15,10 +49,14 @@ groups: **Media Capabilities APIs**, **Signaling APIs** and
 
 ## Media Capabilities APIs
 
-These APIs expose to the application logic the low-level media capabilities of
-NUBOMEDIA. These capabilities are basically the ones offered by the
-**NUBOMEDIA Media Server** and the **NUBOMEDIA Media Repository**. As a result,
-this group includes two APIs:
+From the developer’s perspective, NUBOMEDIA capabilities are accessed through a
+set of APIs. Hence, for creating NUBOMEDIA enabled applications developers just
+need to understand these NUBOMEDIA Development APIs so that they may use them
+for creating their rich RTC media applications. These APIs expose to the
+application logic the low-level media capabilities of NUBOMEDIA. These
+capabilities are basically the ones offered by the **NUBOMEDIA Media Server**
+and the **NUBOMEDIA Media Repository**. As a result, this group includes two
+APIs:
 
 - The [NUBOMEDIA Media API](./api/media.md), which enables developers
   consuming the NUBOMEDIA Media Server capabilities among which we can find
