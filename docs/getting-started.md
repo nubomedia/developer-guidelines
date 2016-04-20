@@ -18,8 +18,9 @@ developers distinguish three layers:
 - The *Service Layer* comprise a number of services that are required for the
   application to work. In NUBOMEDIA, this layer is composed by a set of
   **Media Servers** (namely, [Kurento Media
-  Server](doc-kurento.readthedocs.org)) and a **Media Repository** (i.e. the
-  [Kurento Repository](http://doc-kurento-repository.readthedocs.org/)).
+  Server](http://doc-kurento.readthedocs.org/)) and a **Media Repository**
+  (i.e. the [Kurento
+  Repository](http://doc-kurento-repository.readthedocs.org/)).
 
 The NUBOMEDIA Media Server has the objective of providing the NUBOMEDIA platform
 with a media function capability that can be used for creating a cloud media
