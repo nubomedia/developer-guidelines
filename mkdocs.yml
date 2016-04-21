@@ -28,7 +28,7 @@ pages:
     - Video Content Analysis (VCA): filter/video-content-analysis.md
     - Augmented Reality (AR): filter/augmented_reality.md
 - Framework tools:
-    - Visual Development Tools: tools/visual-development-tools.md
+    - Visual Development Tool: tools/visual-development-tools.md
     - Monitoring Tools: tools/monitoring-tools.md
     - Autonomous Installer: tools/autonomous-installer.md
 

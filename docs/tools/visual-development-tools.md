@@ -13,6 +13,7 @@ The overall architecture is similar to that of Flux, as illustrated in the follo
 *Flux architecture*
 
 Flux is an "Application Architecture for Building User Interfaces", built by the team at Facebook. It is a set of patterns building larger applications on top of the React component library.
+<<<<<<< HEAD
 
 
 ## Graph Editor
@@ -60,3 +61,5 @@ The Graph Editor is an HTML app based on Facebook's [React](https://facebook.git
 ![NUBOMEDIA Graph Editor. Step 7 – nodes availability](../img/graph-editor-07.png)
 
 *NUBOMEDIA Graph Editor. Step 7 – nodes availability*
+=======
+>>>>>>> master
