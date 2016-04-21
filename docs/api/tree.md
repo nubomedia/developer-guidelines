@@ -1,20 +1,20 @@
-# NUBOMEDIA Tree API
+# Overview
 
 The NUBOMEDIA Tree API allows developers to build video broadcasting web applications. It is developed using WebRTC technology on the top of Kurento Media Server. This API is composed by a server and two clients (Java and a JavaScript):
 
-* ```tree-server``` is a component of the API designed to be deployed and controlled by clients. This component uses a Kurento Media Server instance to provide WebRTC media handling to clients. For this reason, a Kurento Media Server has to be available and configured in the server configuration file.
-* ```tree-client``` implements a Tree Client designed to be used in Java web applications or Android applications. The client contains an implementation of JSON-RPC WebSocket protocol implemented by Tree server. It does not contain any functionality to control video players or video capturing from webcams.
-* ```tree-client-js``` implements a Tree Client to be used in Single Page Applications (SPA). Besides the JSON-RPC WebSocket protocol, it uses several libraries to control WebRTC and HTML5 APIs in the browsers. This allows to developer to focus in its application functionality hiding low level details.
+- ```tree-server``` is a component of the API designed to be deployed and controlled by clients. This component uses a Kurento Media Server instance to provide WebRTC media handling to clients. For this reason, a Kurento Media Server has to be available and configured in the server configuration file.
 
+- ```tree-client``` implements a Tree Client designed to be used in Java web applications or Android applications. The client contains an implementation of JSON-RPC WebSocket protocol implemented by Tree server. It does not contain any functionality to control video players or video capturing from webcams.
+
+- ```tree-client-js``` implements a Tree Client to be used in Single Page Applications (SPA). Besides the JSON-RPC WebSocket protocol, it uses several libraries to control WebRTC and HTML5 APIs in the browsers. This allows to developer to focus in its application functionality hiding low level details.
 
 The Tree server exposes a SockJS  WebSocket at http://treeserver:port/kurento-tree, where the hostname and port depend on the current setup. The exchanged messages between server and clients are JSON-RPC 2.0 requests and responses. The events are sent from the server to client as notifications (they don’t require a response and they don’t include an identifier).
 
 The Java and JavaScript clients has been designed to be used with browsers (it uses several browser-only APIs). Other clients can be implemented if follow the JSON-RPC over WebSocket protocol
 
+# Architecture
 
-## Feature Overview
 The NUBOMEDIA Tree API is based on client-server architecture. The exchanged messages between server and clients are JSON-RPC 2.0 requests and responses. The events are sent from the server to client as notifications (they don’t require a response and they don’t include an identifier). The following table summarizes the possible operations provided by the Tree service: 
-
 
 | Operation            | Description                                    |
 |----------------------|------------------------------------------------|
@@ -27,8 +27,8 @@ The NUBOMEDIA Tree API is based on client-server architecture. The exchanged mes
 | Add ice candidate    | Request used to add a new ice candidate generated in the browser. It is send by clients to server.|
 | Remove tree          | Request used to remove a tree. It is send by clients to server.|
 
+# Example Use Case
 
-## Example Use Case
 The typical scenario of an application using the NUBOMEDIA Tree API is a web application that allows a user to broadcast his webcam and any other user can see it.
 
 From a technical point of view, this use case can be implemented as a Single Page Application (SPA) as a bunch of HTML, CSS and JS files. These files are served from a SpringBoot web server, but can be served with any http server. The JavaScript code uses Tree JavaScript client to communicate directly with Tree Server.
@@ -36,5 +36,11 @@ From a technical point of view, this use case can be implemented as a Single Pag
 JavaScript logic communicates with SpringBoot server by means of WebSocket protocol. The SpringBoot server handle WebSocket messages and uses Tree Client to communicate with Tree Server. That is, there is no direct communication between JavaScript code and Tree Server. All communications is through SpringBoot server app.
 
 
-## Resources
-[TODO]
+# Resources
+
+Full official documentation:
+
+- [Tree API official documentation](http://doc-kurento-tree.readthedocs.org/en/latest/)
+- [Tree server protocol API official documentation](http://doc-kurento-tree.readthedocs.org/en/latest/deployment.html)
+- [Tree JavaScript client API official documentation](http://doc-kurento-tree.readthedocs.org/en/latest/javascript_client.html)
+- [Tree Java client API official documentation](http://doc-kurento-tree.readthedocs.org/en/latest/java_client.html)
