@@ -43,7 +43,7 @@ where:
 
     - ```scale_out_threshold```: This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. CHECK which flavor you are going to use before defining this threshold. 
 
->>!!! warning
+>>!!! info
     Do not put a value lower than the total capacity of your flavor!
 
 - ```Do you want to set the Quality of Service?``` If checked then you are given the options to set

@@ -6,7 +6,7 @@ From the application developer perspective, Media Elements are like Lego pieces:
 
 NUBOMEDIA inherits the rich toolbox provided by Kurento. For further information please visit the [Kurento documentation](http://doc-kurento.readthedocs.org/en/stable/introducing_kurento.html).
 
-# NUBOMEDIA Media Client (NMC)
+# NUBOMEDIA Media Client
 
 In order to deploy your application on the NUBOMEDIA Cloud Platform, there a specific NUBOMEDIA library which should be include as dependency to your projects. This library is called **NUBOMEDIA Media Client (NMC)**, and provides the base functionality to compliment the Kurento Client for auto discovery of the Kurento Media Server inside the NUBOMEDIA PaaS. NMC extend the Kurento Client library  with functionalities on how to obtain network resources (for example the IP address of the Kurento Media Server). 
 
@@ -28,8 +28,6 @@ In order to obtain the NMC, it can be done by means of [Maven](https://maven.apa
    </dependency>
 </dependencies>
 ```
-
-<br>
 
 !!! info
 

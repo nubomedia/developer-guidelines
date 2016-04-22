@@ -47,8 +47,6 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
 </dependency>
 ```
 
-<br>
-
 !!! info
 
     We are in active development. Please take a look to the [Maven Central Repository](http://search.maven.org/) to find out the latest version of the artifacts.

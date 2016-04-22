@@ -4,8 +4,7 @@ The NUBOMEDIA Repository API has the objective of exposing the repository capabi
 
 The NUBOMEDIA Repository API is build on the top of the [Kurento Repository](http://doc-kurento-repository.readthedocs.org/). The *kurento-repository-sever* can be provided in a seamless way by the NUBOMEDIA PaaS (see [PaaS Manager](../pass/pass-gui) page to find out how to do it).
 
-
-# The NUBOMEDIA Repository Client
+# NUBOMEDIA Repository Client
 
 The NUBOMEDIA Repository Client (NRC) is a very light weight library that provides to access the NUBOMEDIA cloud repository. The NRC library has been distributed via Maven, and therefore it can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg). In order to use it, simply include it on your project's *pom.xml* file as describe below. Notice that the original *kurento-repository-client* dependency is also required.
 
@@ -25,8 +24,6 @@ The NUBOMEDIA Repository Client (NRC) is a very light weight library that provid
    </dependency>
 </dependencies>
 ```
-
-<br>
 
 !!! info
 

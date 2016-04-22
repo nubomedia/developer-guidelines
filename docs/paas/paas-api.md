@@ -85,7 +85,7 @@ where:
 
 - ```scale_out_threshold```: This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. Check which flavor you are going to use before defining this threshold. 
 
->!!! warning
+>!!! info
     Do not put a value lower than the total capacity of your flavor!
 
 - ```qualityOfService```: If enabled it provides dedicated bandwidth levels between media server instances (optional). Possible values are:

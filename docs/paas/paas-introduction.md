@@ -114,11 +114,10 @@ You can create a secret a secret a REST client via graphical interface or curl u
 }
 ```
 
-!!! warning
+!!! info
 
     Private key value must preserve newlines, use ```\n``` to preserve it.
 
-The above is an example of what the private RSA Key looks like. Replace it with your generated private key. For more information on generating RSA private key, check the [GitHub documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)  
+The above is an example of what the private RSA Key looks like. Replace it with your generated private key. For more information on generating RSA private key, check the [GitHub documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
 
 The GUI (or the Http request) will return the ```secretname``` that has to be used when you want to deploy the application as described in [deploying via PaaS GUI](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-gui.md) or in [deploying via PaaS API](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-api.md).
-
