@@ -60,7 +60,7 @@ public class NubomediaRoomApp extends KurentoRoomServerApp {
 
   @Override
   public JsonRpcUserControl userControl() {
-    return new FaceOverlayUserControl(roomManager());
+    return new NubomediaRoomUserControl(roomManager());
   }
 
   public static void main(String[] args) throws Exception {
