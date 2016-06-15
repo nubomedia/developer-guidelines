@@ -40,3 +40,4 @@ copyright: Copyright &copy; 2016 <a href="http://www.nubomedia.eu/">NUBOMEDIA</a
 theme: readthedocs
 extra_css:
     - css/extra.css
+    - css/extra2.css
