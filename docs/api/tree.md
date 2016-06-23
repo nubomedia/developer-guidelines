@@ -35,7 +35,6 @@ From a technical point of view, this use case can be implemented as a Single Pag
 
 JavaScript logic communicates with SpringBoot server by means of WebSocket protocol. The SpringBoot server handle WebSocket messages and uses Tree Client to communicate with Tree Server. That is, there is no direct communication between JavaScript code and Tree Server. All communications is through SpringBoot server app.
 
-
 # Resources
 
 Full official documentation:

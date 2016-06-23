@@ -1,8 +1,6 @@
-# WebRtcPeer API
+# Overview
 
 The NUBOMEDIA WebRtcPeer API abstracts the client RTC media capabilities, so that its media capture and communication capabilities are exposed to the developer in a simple, seamless and unified way. It is specifically concentrated on WebRTC client capabilities. Following W3C WebRTC specifications WebRTC APIs are split into two: the Media Capture API (i.e. ```getUserMedia```) and the ```PeerConnection``` API. The former exposes client capabilities for accessing webcam and microphone while the latter enables media communications through an SDP negotiation mechanism. The WebRtcPeer unifies both under a common abstraction.
-
-## Features overview
 
 This WebRtcPeer API offers a WebRtcPeer object, which is a wrapper of the browser’s RTCPeerConnection API. Peer connections can be unidirectional (send or receive only) or bidirectional (send and receive). The following snippet shows how to create the latter in JavaScript, i.e. a WebRtcPeer object to send and receive media (audio and video). This code assumes that there are two different video tags in the web page that loads the script. These tags are used to show the video as captured by the browser and the media received from other peer. The constructor receives a property bag that holds all the information needed for the configuration
 
@@ -56,6 +54,7 @@ webRtcPeer.addIceCandidate(candidate);
 ```
 
 ## Examples and Use Cases
+
 There are several ways to use the NUBOMEDIA WebRtcPeer API:
 
 1. By means of the minified JavaScript file. This library can be directly downloaded from this [URL](http://builds.kurento.org/release/6.4.0/js/kurento-client.min.js)
