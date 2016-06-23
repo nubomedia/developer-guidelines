@@ -1,14 +1,33 @@
 # Introduction
 
-NUBOMEDIA is an open source cloud **Platform as a Service (PaaS)** which makes
-possible to integrate **Real Time Communications (RTC)** and multimedia through
-advanced media processing capabilities. The aim of NUBOMEDIA is to democratize
-multimedia technologies helping all developers to include advanced multimedia
-capabilities into their Web and smartphone applications in a simple, direct and
-fast manner. To accomplish that objective, NUBOMEDIA provides a **set of APIs**
-that try to abstract all the low level details of service deployment,
-management, and exploitation allowing applications to transparently scale and
-adapt to the required load while preserving QoS guarantees.
+NUBOMEDIA is the first **open source elastic cloud PaaS** (Platform as a
+Service) specifically designed for
+**real-time interactive multimedia services**, which exposes its capabilities
+through simple **APIs**.
+
+For understanding how a real PaaS works we just need to think on services such
+as Heroku, the Google App Engine or Pivotal PCF. All of them expose to
+developers the ability of uploading, deploying and executing applications that
+leverage the PaaS capabilities through custom SDKs. By using them, developers
+do not need to worry about aspects such as the provisioning, the scalability,
+the resilience or the security of the services they consume as they are
+provided off-the-shelf by the PaaS. This model is quite convenient as it lets
+developers to concentrate on creating their application logic while all the
+complex aspects of deploying, scaling and securing them are assumed by the PaaS.
+
+NUBOMEDIA is a real PaaS as it makes possible to upload, deploy and execute
+developers’ applications written in the **Java programming language**. At the
+same time, NUBOMEDIA is a WebRTC platform as it provides the ability of
+accessing scalable, secure and reliable WebRTC capabilities. Thanks to this,
+NUBOMEDIA combines the simplicity and ease of development of WebRTC API PaaS
+services with the flexibility of real PaaS infrastructures. Hence, as NUBOMEDIA
+is a Java PaaS, developers can leverage all the capabilities of the Java
+platform for creating their applications. The only difference with other PaaS
+services it that NUBOMEDIA makes available WebRTC capabilities through a
+specific API. Hence, WebRTC just becomes another of the SDKs that can be used
+while programming. Once an application is completed, developers just need to
+deploy it into NUBOMEDIA and it will scale in a secure and reliable way with
+full transparency.
 
 # Table of contents
 
@@ -18,19 +37,22 @@ find guidelines on application development, deployment, using the elastic and
 scalability functionalities of the platform. The contents of this documentation
 is divided into the following sections:
 
-- An introduction to the NUBOMEDIA APIs and architecture is depicted in the
-  [Getting started](./getting-started.md) section.
+- The guide to understand how to NUBOMEDIA works in a nutshell is depicted in
+  the [Getting started](./getting-started.md) section.
 
 - The detailed description of the different NUBOMEDIA APIs can be found in the
-  following sections: [Media API](./api/media.md), [Repository
-  API](./api/repository.md), [WebRtcPeer API](./api/webrtcpeer.md), [Signaling
-  API](./api/signaling.md), [Room API](./api/room.md), and [Tree
-  API](./api/tree.md).
+  following sections: [Media](./api/media.md),
+  [Repository](./api/repository.md), [WebRtcPeer](./api/webrtcpeer.md),
+  [Signaling](./api/signaling.md), [Room](./api/room.md), and [Tree
+  ](./api/tree.md) API.
+
+- A brief introduction of the NUBOEMDIA SDKs APIs can be found in the
+  following sections: [Android](./sdk/android.md) and [iOS](./sdk/ios.md) SDK.
 
 - The tutorials section contains demo applications showing how to use
-  NUBOMEDIA build different types of multimedia applications. The tutorials are
-  [magic-mirror](./tutorial/nubomedia-magic-mirror.md) (i.e. WebRTC with
-  computer vision and augmented reality techniques),
+  NUBOMEDIA by means of different types of multimedia applications. These
+  tutorials are [magic-mirror](./tutorial/nubomedia-magic-mirror.md) (i.e.
+  WebRTC with computer vision and augmented reality techniques),
   [repository](./tutorial/nubomedia-repository.md) (i.e. media record and
   playback on the NUBOMEDIA repository), and
   [room](./tutorial/nubomedia-room.md) (i.e. WebRTC multiconference application
@@ -39,7 +61,7 @@ is divided into the following sections:
 - The [PaaS Manager](./paas/paas-introduction.md) is the part of the system
   enabling developers to deploy and manage NUBOMEDIA applications. The
   capabilities of this component can be accessed by means of the the [PaaS
-  API](./paas/paas-api.md) and the [PaaS GUI](./paas/paas-api.md).
+  API](./paas/paas-api.md) and the [PaaS GUI](./paas/paas-gui.md).
 
 - NUBOMEDIA provide seamless integration and access to advanced media
   processing capabilities such as [Video Content Analysis
@@ -55,7 +77,12 @@ is divided into the following sections:
   Installer](./tools/autonomous-installer.md) (NAI), which is be able to
   install the NUBOMEDIA platform into an IaaS environment.
 
-# Contact us
+- Some documentation for advanced users can be found this documentation: for
+  instance [NUBOMEDIA Architecture](./advanced/nubomedia_architecture.md) and
+  [Media Server Discovery
+  Process](./advanced/media_server_discovery_process.md).
+
+# Contact
 
 If you have any doubt, comment, or problem related with NUBOMEDIA, please ask
 for support in the [NUBOMEDIA development mailing

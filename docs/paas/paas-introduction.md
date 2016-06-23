@@ -18,7 +18,7 @@ To build an application from the source code the following steps are necessary:
 
 Maven and JDK 8 is already in the base-image so you don't need to install anything.
 
-An example of this kind of deployment can be found [here](https://github.com/fhg-fokus-nubomedia/nubomedia-source-build-example)). In addition, the tutorials described in this documentation follow also this approach: [magic-mirror](./tutorial/nubomedia-magic-mirror.md), [repository](./tutorial/nubomedia-repository.md), [room](./tutorial/nubomedia-room.md).
+An example of this kind of deployment can be found [here](https://github.com/fhg-fokus-nubomedia/nubomedia-source-build-example)). In addition, the tutorials described in this documentation follow also this approach: [magic-mirror](../tutorial/nubomedia-magic-mirror.md), [repository](../tutorial/nubomedia-repository.md), [room](../tutorial/nubomedia-room.md).
 
 # Building from Jar
 
