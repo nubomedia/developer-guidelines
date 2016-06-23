@@ -154,7 +154,9 @@ window.onbeforeunload = function() {
 
 ## Deployment
 
-The deployment of this application can be done by means of the PaaS Manager directly from the source code hosted on GitHub. To do that, first of all we need to define a [Dockerfile](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/Dockerfile) inside our project. 
+This application has been implemented as an [Spring-Boot](http://projects.spring.io/spring-boot/) application. Spring-boot allows to create stand-alone Spring applications embedding an application server (Tomcat) without need to deploy WAR files. The resulting application is simply a JAR file which packages a web application which is deployed in the application server when the [main class](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorApp.java) is executed. This is done by means of Maven (see `ENTRYPOINT` command in the above instructions).
+
+The deployment of this application can be done by means of the PaaS Manager directly from the source code hosted on GitHub. To do that, first of all we need to define a [Dockerfile](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/Dockerfile) inside our project, as follows: 
 
 ```
 FROM nubomedia/apps-baseimage:src
@@ -178,7 +180,7 @@ Examining the  content of this file, we can how the content of the project is in
 After that, several Maven command are configured:
 
 * `RUN cd /home/nubomedia && mvn compile`: Compile the project.
-* `ENTRYPOINT cd /home/nubomedia && mvn exec:java`: Run the deployed application.
+* `ENTRYPOINT cd /home/nubomedia && mvn exec:java`: Run the Spring-Boot application.
 
 
 At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](http://paas-manager.nubomedia.eu:8081/#/) (please visit the [PaaS Manager GUI section](../paas/paas-api.md) for further details).
