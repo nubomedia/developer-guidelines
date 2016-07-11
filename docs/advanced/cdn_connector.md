@@ -92,3 +92,61 @@ In the left menu (same page like in step 2) go to ```APIs & auth```; -> ```Crede
 
 [Channel]: https://www.youtube.com/channel
 [Console]: https://console.developers.google.com
+
+## Getting Started
+The CDN Connector SDK is distributed and available via the Maven Central Repository
+In order to obtain the CDN Connector SDK, it can be done by means of [Maven](https://maven.apache.org/) in a Java project. The CDN Connector SDK is distributed and can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg.nubomedia). Simply include it on your project's *pom.xml* file as describe below. 
+
+```xml
+<dependencies>
+...
+   <!-- Nubomedia CDN client dependency -->
+   <dependency>
+   	<groupId>de.fhg.fokus.nubomedia</groupId>
+	<artifactId>nubomedia-cdn-client</artifactId>
+	<version>0.0.7</version>
+   </dependency>
+</dependencies>
+```
+
+!!! info
+
+    We are in active development. Please take a look to the [Maven Central Repository](http://search.maven.org/) to find out the latest version of the artifacts.
+
+With this dependeny included in our Java project, we will be able to create instances of the CDN Manager.  
+
+```java
+    // CDN Manager instantiation
+    CdnManager cdnManager = new CdnManager(;
+```
+
+With this instance, we are able to upload a video to for examples our YouTube channel.
+
+```java
+	publishedVideo = cdnManager.uploadVideo(Schemes.YOUTUBE, repoURL, jsonMessage, null, new MediaHttpUploaderProgressListener(){
+		@Override
+		public void progressChanged(MediaHttpUploader uploader) throws IOException {
+			switch (uploader.getUploadState()) {
+				case INITIATION_STARTED:
+				log.debug("Initiation Started");
+				break;
+				
+				case INITIATION_COMPLETE:
+				log.debug("Initiation Completed");
+				break;
+				
+				case MEDIA_IN_PROGRESS:
+				log.debug("Upload in progress, " + uploader.getProgress() + "%");
+				break;
+	
+				case MEDIA_COMPLETE:
+				log.debug("Upload Completed!");
+				break;
+
+				case NOT_STARTED:
+				log.debug("Upload Not Started!");                       
+				break;
+			}				
+		}        	
+	}); 	
+```
