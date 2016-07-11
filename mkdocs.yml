@@ -37,6 +37,8 @@ pages:
 - Advanced:
     - NUBOMEDIA Architecture: advanced/nubomedia_architecture.md
     - Media Server Discovery Process: advanced/media_server_discovery_process.md
+    - Content Distribution Network: advanced/cdn_connector.md
+    - IP Multimedia Subsytem: advanced/ims_connector.md
 
 
 markdown_extensions:
