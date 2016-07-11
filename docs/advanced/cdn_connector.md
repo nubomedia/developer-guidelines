@@ -17,7 +17,7 @@ The CDN Connector constitutes three main building blocks namely the CDN Manager,
 
 ![CDN Service Architecture](../img/cdn_architecture.png)
 
-## CDN Service Architecture
+*CDN Service Architecture*
 
 *CDN Manager* is the core module that manages the other modules within the package. It holds a collection of listeners, providers and high abstraction sevice API of the CDN providers
 
@@ -74,3 +74,21 @@ public interface CdnProvider {
 	public void storeCredentials(Credential credential);
 }
 ```
+## Use Case: YouTube Provider
+YouTube is the most popular user content generated CDN with site traffic of 52 Million monthly visitors. It provides a Data API that allows programmatic access to authenticated users to perform many of the operations available on the website. The API provides the capability to search for videos, retrieve standard feeds, and see related content. A program can authenticate as a user to upload, modify user playlists and broadcast a live stream.
+
+The ```YouTubeProvider``` interface has been integrated on the CDN framework. In order to use it for development, there are some prerequisites necessary
+
+### Prerequisites - YouTube CDN
+If NUBOMEDIA applications wants to make use of the YouTube Provider, some prerequisites must be fulfilled. This mainly relates to the creation of a YouTube account and a specific project associated with that account and the authorization to be able to make API requests.
+
+1. **Create a YouTube account and a channel***: registering an account for YouTube is quite easy: visit google.com and create a new user account. With the Google account a user can make use of the YouTube services. Create a channel for your account at [Channel] (while logged in).
+
+2. **Register a project**: Visit the developer's [Console] (while you are logged in) and create a new project. On the left menu, go to ```APIs ``` -> ```APIs``` and enable the YouTube Data API
+
+3. **OAuth configuration**: YouTube uses OAuth 2.0 to authorize API requests. Therefore you need to configure credentials that will be used by your web application (aka NUBOMEDIA webrtc client) to retrieve an access token. The access token and other parameter will be sent with the client requests to the connector so that the YouTube connector is able to make YouTube API requests.
+
+In the left menu (same page like in step 2) go to ```APIs & auth```; -> ```Credentials```. Click on ```Create new Client ID```->```Web application```. Then new credentials will be generated.
+
+[Channel]: https://www.youtube.com/channel
+[Console]: https://console.developers.google.com
