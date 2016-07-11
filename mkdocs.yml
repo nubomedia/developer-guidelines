@@ -23,6 +23,7 @@ pages:
     - Magic-Mirror: tutorial/nubomedia-magic-mirror.md
     - Repository: tutorial/nubomedia-repository.md
     - Room: tutorial/nubomedia-room.md
+    - CDN: tutorial/nubomedia-cdn.md
 - PaaS Manager:
     - Introduction: paas/paas-introduction.md
     - PaaS API: paas/paas-api.md
