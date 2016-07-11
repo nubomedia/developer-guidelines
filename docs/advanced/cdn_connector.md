@@ -50,7 +50,7 @@ public interface CdnProvider {
 	public void deleteVideo(String videoId) throws CdnException;
 	
 	/**
-	 * Returns a JSON object with the list of all uploaded videos on the registered user�s channel
+	 * Returns a JSON object with the list of all uploaded videos on the registered user's channel
 	 * @throws CdnException - CDN exception thrown in case of failure
 	 */
 	public void getChannelList() throws CdnException;
