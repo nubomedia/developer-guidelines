@@ -7,6 +7,9 @@ A Content Distribution Network (CDN) which can also be called Content Delivery N
 
 NUBOMEDIA focuses only on *On Demand Video* CDNs. For this purpose an SDK - CDN Connector is provided to developers which offers an data APIs to access the user's data on the CDN. This can be used to upload files from the NUBOMEDIA repository to the user's CDN for publishing. 
 
-![NUBOMEDIA CDN](../img/nubomedia-architecture.png)
+![NUBOMEDIA CDN](../img/cdn-architecture.png)
 
 *NUBOMEDIA CDN*
+
+
+## Service Architecture
