@@ -151,4 +151,4 @@ With this instance, we are able to upload a video to for examples our YouTube ch
 	}); 	
 ```
 
-A complete application tutorial guide demonstrating the use of the CDN connector is found [here](../docs/nubomedia-cdn.md)
+A complete application tutorial guide demonstrating the use of the CDN connector is found [here](../tutorial/nubomedia-cdn.md)
