@@ -10,7 +10,7 @@ This application is an example of the usage of the [CDN Connector](../advanced/c
 
 This application is open source (LGPL license) and it is available on [GitHub](https://github.com/nubomedia/nubomedia-cdn-tutorial).
 
- [1](nubomedia-repository.md) explains in details of the NUBOMEDIA Repository. This section concerntrates only on the service logic in utilizing the CDN connector SDK.
+ [NUBOMEDIA repository tutorial](nubomedia-repository.md) explains in details of the NUBOMEDIA Repository. This section concerntrates only on the service logic in utilizing the CDN connector SDK.
  
  Dependencies we will need to include on our [pom.xml](https://github.com/nubomedia/nubomedia-cdn-tutorial/blob/master/pom.xml) include:
  
@@ -154,7 +154,7 @@ At this point, we are able to deploy our application in NUBOMEDIA. To that aim, 
 
 Once logged in the PaaS Manager, first we have to click on the *Create App* button inside the *Applications* section. It is very important to define the [GitHub URL](https://github.com/nubomedia/nubomedia-repository-tutorial) in which the project is hosted. In this example, we are not using the scaling mechanisms and a single number of replicas. Finally, it is very important to mark the checkbox "**Do you need a cloud repository for your app?**", since the repository it is a requirement for the application: 
 
-![PaaS Manager Settings for Repository Tutorial](../img/nubomedia-repository-paas-manager.png)
+![PaaS Manager Settings for Repository Tutorial](../img/cdn_deploy.png)
 
 *PaaS Manager Settings for Repository Tutorial*
 
