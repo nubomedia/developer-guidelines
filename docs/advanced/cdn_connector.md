@@ -95,7 +95,7 @@ In the left menu (same page like in step 2) go to ```APIs & auth```; -> ```Crede
 
 ## Getting Started
 The CDN Connector SDK is distributed and available via the Maven Central Repository
-In order to obtain the CDN Connector SDK, it can be done by means of [Maven](https://maven.apache.org/) in a Java project. The CDN Connector SDK is distributed and can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg.nubomedia). Simply include it on your project's *pom.xml* file as describe below. 
+In order to obtain the CDN Connector SDK, it can be done by means of [Maven](https://maven.apache.org/) in a Java project. The CDN Connector SDK is distributed and can be found on [Maven central repository](http://search.maven.org/#search%7Cga%7C1%7Cde.fhg.fokus.nubomedia). Simply include it on your project's *pom.xml* file as describe below. 
 
 ```xml
 <dependencies>
