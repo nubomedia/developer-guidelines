@@ -82,3 +82,34 @@ public void pageMessageReceived(CoreService service, PageMessage pageMessage) {
 ### Sip Stack 
 The Sip Stack used on the IMS connector is the JAIN-SIP reference implementation.
 The Java APIs for Integrated Networks (JAIN) is a Java Community Process (JCP) work group managing telecommunication standards. JAIN SIP API is a standard and powerful SIP stack for telecommunications. The reference implementation is open source, very stable, and very widely used for SIP application development. The sip stack provides three base transport protocols, TCP, UDP and recently also WS.
+
+## Setting up IMS Network
+For the IMS network, the Open Source IMS Core (OSIMS) which was developed by Fraunhofer Institut FOKUS and now maintained by a spin-off company of Fraunhofer Institut FOKUS called Core Network Dynamics (CDN). OSIMS is an Open Source implementation of IMS Call Session Control Functions (CSCFs) and a lightweight Home Subscriber Server (HSS), which together form the core elements of all IMS/NGN architectures as specified today within 3GPP, 3GPP2, ETSI TISPAN and the PacketCable intiative. The four components are all based upon Open Source software (e.g. the SIP Express Router (SER) or MySQL). 
+
+A comprehensive guide on setting up your own OSIMS network can [here](http://www.openimscore.org/documentation/installation-guide/). This guide, guides you on how to obtain the source, compile it, configure the network environment, configure the IMS core network to map you environment, start the components and configure the subscribers. It provides two default users (Alice and Bob), you can use to test.
+
+### Creating new Subscribers
+This applies in the case, you wish to create new subscribers. All configurations are carried out through the FHoSS (FOKUS Home Subscriber Server) web interface. 
+The IMS subscriber account is composed of three correlated parts:
+*	Subscription (IMSU) – identifies the user on the level of contract between subscriber and network,
+*	Private Identity (IMPI) – used by the user for authorization and authentication within the home network,
+*	Public User Identity (IMPU) – addressable identity of the user.
+
+Any Service Profile is always prescribed to particular IMPU. This part describes how to create such account from the scratch. In order to create a user account, first all the above described steps need to be executed. To create IMSU from web console navigate through: User Identities → IMS Subscription → Create and specify the following values:
+*	Name – any reasonable unique name
+*	Capabilities Set – optional parameter specifying S-CSCF selection preferences for Interrogating-CSCF (I-CSCF),
+*	Preferred S-CSCF – optional preassigned S-CSCF.
+
+To create IMPI navigate through: User Identities → Private Identity → Create and specify the following values:
+*	Identity – in the form username@domain i.e. carlo@nubomedia-ims.test
+*	Secret key – password,
+*	Authentication Schemes – whichever is required, I usually use all,
+*	Default – for instance Digest-MD5.
+
+Hereafter, the IMPI needs to be assigned to the previously created IMSU.
+To create IMPU navigate through: User Identities → Public User Identity → Create and specify the following values:
+*	Identity – in the form of SIP URI  i.e. sip:carlo@nubomedia-ims.test
+*	Service Profile – any existing profile, there is always an empty profile created (no IFCs attached), which can be assigned by default.
+At the end add a list of allowed visited networks, at least the home network and associate IMPU with previously created IMPI.
+
+Last step in the provisioning process is to assign a service profile to the User subscriber account. A Service Profile is activated for a particular user by assigning it to one of his IMPU’s. From the HSS web console, navigate to: User Identities → Public User Identity → Search.
