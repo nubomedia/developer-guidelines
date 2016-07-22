@@ -115,4 +115,4 @@ At the end add a list of allowed visited networks, at least the home network and
 Last step in the provisioning process is to assign a service profile to the User subscriber account. A Service Profile is activated for a particular user by assigning it to one of his IMPU’s. From the HSS web console, navigate to: User Identities → Public User Identity → Search.
 
 ## Testing and Validation
-To test and validate the IMS connector on your IMS network, a sample tutorial can be found [here](../tutorial/nubomedia-ims.md) that explains how the IMS connector is used within an application and how the application connects can connect to your IMS network.
+To test and validate the IMS connector on your IMS network, a sample tutorial can be found [here](../tutorial/nubomedia-ims.md) that explains how the IMS connector is used within an application and how the application can connect to your IMS network.
