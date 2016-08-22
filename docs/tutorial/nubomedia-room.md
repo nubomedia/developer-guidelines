@@ -30,6 +30,23 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
 
     We are in active development. Please take a look to the [Maven Central Repository](http://search.maven.org/) to find out the latest version of the artifacts.
 
+- To add *kurento-room* dependencies (*kurento-room-server* and *kurento-room-client-js*) dependencies. In addition, this demo uses the *kms-datachannelexample* module, which is media server plugin aimed to read the data from the WebRtc data channels and overlay these data in the media. Therefore, we also need to include the *datachannelexample* Maven dependency:
+
+```xml
+<dependency>
+	<groupId>org.kurento</groupId>
+	<artifactId>kurento-room-server</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.kurento</groupId>
+	<artifactId>kurento-room-client-js</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.kurento.module</groupId>
+	<artifactId>datachannelexample</artifactId>
+</dependency>
+```
+
 - The way in which the *Kurento Client* is instantiated should be changed. As depicted on [Kurento documentation](http://doc-kurento.readthedocs.org/en/stable/introducing_kurento.html#kurento-api-clients-and-protocol), the Kurento Client is the piece of software aimed to control the **Kurento Media Server (KMS)**. Inside NUBOMEDIA, the instances of KMSs are elastically managed by the platform, scaling in and out depending on the load of the system. Therefore we need to create a new instance of *KurentoClient* for every room. As depicted on [Kurento Room documentation](http://doc-kurento-room.readthedocs.org/en/stable/room_demo_tutorial.html), in order to control the *KurentoClient* creation, an instance of the interface *KurentoClientProvider* should be provided. This can be done easily extending the class *KmsManager*. The code of this [class](https://github.com/nubomedia/nubomedia-room-tutorial/blob/master/src/main/java/eu/nubomedia/tutorial/room/SingleKmsManager.java) is the following:
 
 ```java
@@ -67,6 +84,31 @@ public class NubomediaRoomApp extends KurentoRoomServerApp {
     SpringApplication.run(NubomediaRoomApp.class, args);
   }
 }
+```
+
+- Enable the data channels support in the client-side of the room application. This should be done setting the flag *data* to *true* the local stream configuration (see [loginController.js](https://github.com/nubomedia/nubomedia-room-tutorial/blob/master/src/main/resources/static/angular/login/loginController.js)):
+
+```javascript
+var kurento = KurentoRoom(wsUri, function (error, kurento) {
+	if (error) return console.log(error);
+
+	room = kurento.Room({
+		room: $scope.roomName,
+		user: $scope.userName,
+		updateSpeakerInterval: $scope.updateSpeakerInterval,
+		thresholdSpeaker: $scope.thresholdSpeaker
+	});
+
+	var localStream = kurento.Stream(room, {
+		audio: true,
+		video: true,
+		data: true
+	});
+
+	// Handle events
+
+	localStream.init();
+});
 ```
 
 ## Deployment
