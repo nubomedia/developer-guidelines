@@ -86,4 +86,6 @@ is divided into the following sections:
 
 If you have any doubt, comment, or problem related with NUBOMEDIA, please ask
 for support in the [NUBOMEDIA development mailing
-list](https://groups.google.com/forum/#!forum/nubomedia-dev).
+list](https://groups.google.com/forum/#!forum/nubomedia-dev). If you find some
+bug related with NUBOMEDIA, please open an issue in our [bug
+tracker](https://github.com/nubomedia/bugtracker/issues) project.
