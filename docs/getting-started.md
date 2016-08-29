@@ -66,6 +66,45 @@ The capabilities provided by the Paas Manager can be used by developers in two w
 
 The **application server** is also provided by the NUBOMEDIA PaaS. Due to the fact that the applications are made in Java, we recommend to use [Spring-Boot](http://projects.spring.io/spring-boot/) as the application server side technology. Spring-Boot embeds a Tomcat server in a simple seamless way for developers. Please take a look to the [tutorials](./tutorial/nubomedia-magic-mirror.md) for examples.
 
+# Running your first NUBOMEDIA application
+
+Now let's see how to deploy an application on the NUBOMEDIA PaaS. It can be done by creating the application from the scratch, but in order to make this process easier, we recommend to use one the NUBOMEDIA tutorials as template, evolving the code according to the specific needs of your app. If you are using the [Media API](./api/media.md), you can use the [magic-mirror tutorial](./tutorial/nubomedia-magic-mirror.md) to run your first application on NUBOMEDIA. Before doing that, please be aware of the following tips:
+
+- We recommend [Spring-Boot](http://projects.spring.io/spring-boot/) as the base technology for NUBOMEDIA applications. Spring-Boot embeds a Tomcat server in a simple seamless way for developers. The application is packaged as a runnable JAR, and when this JAR is executed, the Tomcat server is started and the web application automatically deployed.
+
+- We recommend [Maven](https://maven.apache.org/) as for managing the life-cycle and managing the dependencies of our applications.
+
+- We use [GitHub](https://github.com/) to host the applications that are going to be deployed on NUBOMEDIA.
+
+- Internally, the NUBOMEDIA PaaS uses [Docker](https://www.docker.com/) containers to deploy applications.
+
+Said that, a NUBOMEDIA application is basically a Java project that uses some of the NUBOMEDIA APIs and it can be deployed in the NUBOMEDIA PaaS. In order to configure the deployment, a file called `Dockerfile` should be located in the root of the repository (see [reference documentation](https://docs.docker.com/engine/reference/builder/) for more details).
+
+Now let's see the example ([magic-mirror tutorial](./tutorial/nubomedia-magic-mirror.md)). Once logged in the PaaS Manager, we have to click on the *Create App* button inside the *Applications* section and provide the GitHub URL of our project, in our case this URL is the following:
+
+```
+https://github.com/nubomedia/nubomedia-magic-mirror
+```
+
+Please visit the documentation page about [PaaS Manager](./paas/paas-introduction.md) for further information about the meaning of the rest of configuration values. The most important values are illustrated in this picture:
+
+![PaaS Manager Settings for Magic Mirror Tutorial](./img/magic-mirror-paas-manager.png)
+
+*PaaS Manager Settings for Magic Mirror Tutorial*
+
+Then we need to click on the `Create App` button. The deployment should start, changing the state from `CREATED` to `RUNNING` (it takes a couple of minutes to finish):
+
+![PaaS Manager Settings for Magic Mirror Tutorial](./img/paas_manager_states.png)
+
+*PaaS Manager deployment states*
+
+Once the deployment is finished (i.e., in the state `RUNNING`) we will be able to open the application by clicking on the provided URL by the PaaS. In addition, build and application logs can be accessed in order to trace our application, and monitoring charts are displayed to trace the resources consumption within the PaaS.
+
+![PaaS Manager Settings for Magic Mirror Tutorial](./img/hello-world-nubomedia.png)
+
+*Simplified process to deploy and trace an application in the NUBOMEDIA PaaS Manager*
+
+
 # What's next
 
 Now that you are familiar with the NUBOMEDIA technology, you can create your own applications. To do that, you simply has to follow these steps:
