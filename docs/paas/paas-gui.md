@@ -6,6 +6,8 @@ This documentation describes how to use the PaaS Manager via the REST APIs.
 
 If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com).
 
+## Login 
+
 Once logged in, on the start view, you should see a blue box with the number of already deployed applications. Click on *View Details*. Alternatively on the left hand side menu click on *Applications*. On the next mask above, there is a button *Create App*. The next section explains in details the procedure on creating your application.
 
 ![PaaS Manager Gui - Start View](../img/paas_manager_gui.png)
@@ -16,9 +18,9 @@ Once logged in, on the start view, you should see a blue box with the number of 
 
 ## Create an Application
 
-In order to create in order words deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [sample example] (https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror). 
+In order to deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [sample example] (https://github.com/nubomedia/nubomedia-magic-mirror). 
 
-Once you have all files assembled, the *Create App* View on the PaaS Manager GUI provides you two options to create your application: a *Form* view and *JSON* view. Here the *Form* view is what you wish to use. Explanation on using the *JSON* view is found [here](paas-api.md).
+Once you have all files assembled, the *Create App* View on the PaaS Manager GUI provides you two options to create your application: a *Form* view and *JSON* view. Here the *Form* view is what you wish to use. You can build a *JSON* template of your application following the tutorial [here](paas-api.md) in section Create Application. Once you have the *JSON* file, you can submit it via the GUI.
 
 For the *Form* view, you should see a mask similar to the image below.
 
@@ -27,9 +29,9 @@ For the *Form* view, you should see a mask similar to the image below.
 
 where:
 
-- ```gitURL```: the Git repository URL that contains your project (source or jar), Dockerfile and other files that are necessary to run your application. If the repository is public the link has to be the HTTP version, if is private has to be the SSH version.
+- ```GitURL```: the Git repository URL that contains your project (source or jar), Dockerfile and other files that are necessary to run your application. If the repository is public the link has to be the HTTP version, if is private has to be the SSH version.
 
--  ```appName```: is the name of your application as you would want it to appear on the PaaS. This name is used for creating the DNS entry for your application.
+-  ```Application name```: is the name of your application as you would want it to appear on the PaaS. This name is used for creating the DNS entry for your application.
 
 - ```replicasNumber```: is a numeric value indicating the number of containers to be created for your application by the PaaS. This value is used for load balancing.
 
@@ -37,7 +39,7 @@ where:
 
 -  ```secretName``` (optional): Indicates the name of the secret that has to be used only if your application is on a private Git repository
 
--  ```Do you want to set the scale IN/OUT threshold?``` if checked then you are given the options to set
+-  ```Do you want to set the scale IN/OUT threshold?``` if checked then you are given the options to set. Please follow the [autoscaling](autoscaling.md) documentation for more details on how autoscaling works.
 
     - ```scaleInOut```: Scale in or out indicates the MAX number of media servers (KMS) instances that will be instantiates at runtime, by the auto scaling system.
 

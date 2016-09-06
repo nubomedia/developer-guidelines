@@ -1,12 +1,15 @@
 # Guidelines on Building Application
 
-This section explains the steps necessary in building your application and deploying on the NUBOMEDIA cloud platform.
+This section explains the steps necessary for building your application and deploying it on the NUBOMEDIA PaaS. The NUBOMEDIA PaaS uses OpenShift v3 as backend technology, which supports [docker](https://www.docker.com/) containers. 
+All you need to do in order to deploy your application on the PaaS is to create a dockerfile containing the instructions on how to build your application (from binaries or source code), add it into a git repository, and use the PaaS dashboard for uploading it to NUBOMEDIA.  
+
+Please follow the instructions below for deploying an application either from source code or binaries. 
 
 # Building from Source Code
 
-To build an application from the source code the following steps are necessary:
+To build an application using the source code version the following steps are necessary:
 
-- Create you Dockerfile with all the instructions to copy the source code inside a directory (like the ```ADD``` my-code-folder /tmp/my-code-folder)
+- Create you Dockerfile (see the section below for more details) with all the instructions to copy the source code inside a directory (like the ```ADD``` my-code-folder /tmp/my-code-folder)
 
 - Move inside the directory and run all the commands required for build
 
@@ -14,17 +17,15 @@ To build an application from the source code the following steps are necessary:
 
 - Create a Git repository (private or public) and put inside your code plus Dockerfile
 
-- Deploy the application on the PaaS-manager with the same procedure, if something on your Dockerfile is wrong the build will fail.
+- Deploy the application on the PaaS-manager with the same procedure, if something on your Dockerfile is wrong the build will fail. We suggest you to try building/running the dockerfile on your local docker environment first.
 
-Maven and JDK 8 is already in the base-image so you don't need to install anything.
+Maven and JDK 8 are already installed in the base-image (named: nubomedia/apps-baseimage:src) so you don't need to install anything.
 
 An example of this kind of deployment can be found [here](https://github.com/fhg-fokus-nubomedia/nubomedia-source-build-example)). In addition, the tutorials described in this documentation follow also this approach: [magic-mirror](../tutorial/nubomedia-magic-mirror.md), [repository](../tutorial/nubomedia-repository.md), [room](../tutorial/nubomedia-room.md).
 
 # Building from Jar
 
-To build an application from the jar (an example can be found [here](https://github.com/acheambe/nubomedia-app)) the following steps are necessary:
-
-- In order to deploy a NUBOMEDIA application use NUBOMEDIA APIs to create an application (JAR file)
+To build an application using binaries (an example can be found [here](https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror-jar)) the following steps are necessary:
 
 - Create a Dockerfile that describes the way of running the application in the platform
 
@@ -32,9 +33,6 @@ To build an application from the jar (an example can be found [here](https://git
 
 - Deploy the application using the PaaS GUI or the REST API
 
-# Building from Public Repository
-
-Build and package you application, make the jar package available on a public Git repository.
 
 ## Write a Dockerfile
 
@@ -57,7 +55,7 @@ ENTRYPOINT java -jar /tmp/magic-mirror/nubomedia-magic-mirror-6.2.2-SNAPSHOT.jar
 
 Here are some explanations from the example above.
 
-- ```nubomedia/apps-baseimage:v1``` is the Nubomedia base image to build and run the application, is based on alpine linux with java 8 and bash installed; it also have is internal packet manager to install other packages. We choose that because with ubuntu-based images we had build problems and very low performances
+- ```nubomedia/apps-baseimage:src``` is the Nubomedia base image to build and run the application, is based on alpine linux with java 8 and bash installed; it also have is internal packet manager to install other packages. We choose that because with ubuntu-based images we had build problems and very low performances
 
 - ```MAINTAINER``` is the developer of the application (and the author of the Dockerfile)
 
@@ -120,4 +118,4 @@ You can create a secret a secret a REST client via graphical interface or curl u
 
 The above is an example of what the private RSA Key looks like. Replace it with your generated private key. For more information on generating RSA private key, check the [GitHub documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
 
-The GUI (or the Http request) will return the ```secretname``` that has to be used when you want to deploy the application as described in [deploying via PaaS GUI](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-gui.md) or in [deploying via PaaS API](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-api.md).
+The GUI (or the Http request) will return the ```secretname``` that has to be used when you want to deploy the application as described in [deploying via PaaS GUI](paas-gui.md) or in [deploying via PaaS API](paas-api.md).
