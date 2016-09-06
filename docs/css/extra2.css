@@ -1,0 +1,229 @@
+@media only screen and (min-width: 800px) {
+    body { border-top: #26aae2 5px solid; }
+}
+
+a {
+    color: #26aae2;
+    text-decoration: underline;
+}
+
+.section a:hover {
+    color: #26aae2;
+    text-decoration: none;
+}
+
+a:visited { color: inherit; }
+
+.section a:visited { color: #26aae2; }
+
+.wy-nav-top a, nav.stickynav a, .wy-breadcrumbs a, .wy-breadcrumbs-aside a  { text-decoration: none; }
+
+.wy-nav-content-wrap { background: #fafafa; }
+
+.wy-nav-side {
+    border-right: #e6e6e6 1px solid;
+    background: #fff;
+    height: 94.5%;
+    min-height: 94.5%;
+}
+
+.wy-nav-top i { margin-top: 8px; }
+
+.wy-nav-content { background: none; }
+
+.wy-menu-vertical .current > li { margin-bottom: 10px; }
+
+.wy-menu-vertical a:hover {
+    color: #fff;
+    background-color: #26aae2;
+}
+
+.wy-menu-vertical span {
+    font-weight: bold;
+    color: #333;
+}
+
+.wy-menu-vertical li ul li a { color: #555; }
+
+.wy-menu-vertical .subnav a {
+    margin-left: 20px;
+    padding: 5px 20px;
+}
+
+.toctree-l1 { font-weight: bold; }
+.toctree-l1 a { padding: 5px 20px; }
+
+.wy-menu-vertical li.current .toctree-l3 a,
+.wy-menu-vertical li.current .toctree-l4 {
+    padding: 5px 20px;
+    margin-left: 40px;
+}
+
+.wy-menu-vertical li.toctree-l3 a:hover,
+.wy-menu-vertical li.current .toctree-l4:hover {
+    color: #26aae2;
+	background: none;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    color: #26aae2;
+    font-family:"Lato";
+    font-weight: normal;
+}
+
+h1 { font-size: 32px; }
+
+p ~ h1 { margin-top: 50px; }
+
+.wy-nav-content { max-width: 100%; }
+
+.rst-content {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+    @media only screen and (min-width: 200px) {
+        .rst-content { padding: 10px 0 60px; }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .rst-content { padding: 30px 0 60px; }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .rst-content { padding: 60px 0 100px; }
+    }
+
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a { font-size: 16px; }
+
+.wy-side-nav-search {
+    background-color: #393939;
+    padding: 1.809em 0.809em;
+    margin-bottom: 20px;
+}
+
+.wy-side-nav-search input[type=text] {
+    color: #fff;
+    background: #393939;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    border-bottom: #767676 1px solid;
+    font-size: 14px;
+}
+
+.wy-menu-vertical {
+    width: 96%;
+    float: right;
+}
+
+.wy-menu-vertical li.current { background: #fff; }
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+    /*background: #26aae2;*/
+    background: none;
+    color: #26aae2 !important;
+    border: 0;
+    padding: 8px 20px;
+}
+
+.wy-menu-vertical li.on a:hover, .wy-menu-vertical li.current>a:hover {
+    color: #fff !important;
+	background: #26aae2;
+}
+
+.wy-menu-vertical li.current a {
+    color: inherit;
+    border-right: 0;
+}
+
+.hljs { padding: 2em; }
+
+.wy-alert-title, .rst-content .admonition-title {
+    margin-top: 50px;
+    background: #26aae2;
+}
+
+.wy-nav-content { position: relative; }
+
+.rst-content img {
+    display: block;
+}
+
+footer {
+    display: block;
+    margin-top: 60px;
+    font-size: 12px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+footer a { text-decoration: none; }
+
+.rst-footer-buttons {
+    background-color: #26aae2 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rst-footer-buttons .btn-neutral {
+    border: 0;
+    border-radius: 0;
+    background-color: #26aae2 !important;
+    color: #fff !important;
+    width: 50%;
+}
+
+    @media only screen and (min-width: 200px) {
+
+        .rst-footer-buttons .btn-neutral {
+            font-size: 16px;
+            height: 41px;
+            line-height: 31px;
+        }
+
+    }
+
+    @media only screen and (min-width: 800px) {
+
+        .rst-footer-buttons .btn-neutral {
+            font-size: 18px;
+            height: 53px;
+            line-height: 43px;
+        }
+
+    }
+
+.rst-footer-buttons .btn-neutral:hover {
+    background-color: #125079 !important;
+    color: #fff;
+}
+
+.icon-circle-arrow-left:before {
+    content: "\f104";
+    margin-right: 10px;
+}
+
+.icon-circle-arrow-right:before {
+    content: "\f105";
+    margin-left: 10px;
+}
+
+.btn-neutral:visited { color: #fff !important; }
+
+.wy-side-nav-search::before {
+    background: url('https://raw.githubusercontent.com/nubomedia/developer-guidelines/master/docs/img/nubomedia_logo-150-white.png');
+    content: '';
+    width: 150px;
+    height: 79px;
+    display: block;
+    margin: 0 auto 10px;
+}

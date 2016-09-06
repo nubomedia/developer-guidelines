@@ -1,7 +1,8 @@
-site_name: NUBOMEDIA Developer Guide
+site_name: Developer Guide
 site_url: http://www.nubomedia.eu/
 site_description: Development guidelines to create multimedia applications with NUBOMEDIA APIs
 site_author: NUBOMEDIA
+site_favicon: favicon.ico
 
 repo_url: https://github.com/nubomedia/developer-guidelines
 
@@ -15,18 +16,38 @@ pages:
     - Signaling API: api/signaling.md
     - Room API: api/room.md
     - Tree API: api/tree.md
+- NUBOMEDIA SDKs:
+    - Android SDK: sdk/android.md
+    - Android iOS: sdk/ios.md
 - Tutorials:
     - Magic-Mirror: tutorial/nubomedia-magic-mirror.md
     - Repository: tutorial/nubomedia-repository.md
     - Room: tutorial/nubomedia-room.md
+    - CDN: tutorial/nubomedia-cdn.md
 - PaaS Manager:
     - Introduction: paas/paas-introduction.md
     - PaaS API: paas/paas-api.md
     - PaaS GUI: paas/paas-gui.md
+- Media Processing:
+    - Video Content Analysis (VCA): filter/video-content-analysis.md
+    - Augmented Reality (AR): filter/augmented_reality.md
 - Framework tools:
     - Visual Development Tool: tools/visual-development-tools.md
-    - Video Content Analysis (VCA): tools/video-content-analysis.md
+    - Monitoring Tools: tools/monitoring-tools.md
+    - Autonomous Installer: tools/autonomous-installer.md
+- Advanced:
+    - NUBOMEDIA Architecture: advanced/nubomedia_architecture.md
+    - Media Server Discovery Process: advanced/media_server_discovery_process.md
+    - Content Distribution Network: advanced/cdn_connector.md
+    - IMS Connector: advanced/ims_connector.md
+
+
+markdown_extensions:
+    - admonition
 
 copyright: Copyright &copy; 2016 <a href="http://www.nubomedia.eu/">NUBOMEDIA</a>
 
 theme: readthedocs
+extra_css:
+    - css/extra.css
+    - css/extra2.css
