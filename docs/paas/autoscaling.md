@@ -6,6 +6,7 @@ The NUBOMEDIA autoscaling system provides an advanced functionality for supporti
 
 As mentioned in the previous section, in order to make use of the NUBOMEDIA autoscaling mechanism, the Application should make use of an extended version of the Kurento Media Client. This extended version provides a mechanism for dynamically retrieving KMS instance IPs. The application developer can decide whether to make use of this functionality for each session, therefore having a more granular mechanism for setting up new sessions, or per application. Typically the decision has to be made based on the requirements of the application itself. Furthermore, in order to ensure a certain SLA the EMM keeps track of the KMS capacity using a point mechanism. Depending on its flavor (SMALL, MEDIUM, LARGE) the KMS will be able to handle a certain number of sessions, defined as capacity. Each time a new application requests the EMM for a KMS instance IP it consumes a certain number of points.
 We have defined the following capacity: 
+
 * SMALL: 100 points, which means that a KMS instance is able to handle 2 sessions (each session consumes 50 points by default) in parallel
 * MEDIUM: 200 points, which means that a KMS instance is able to handle 4 sessions (each session consumes 50 points by default) in parallel
 * LARGE: 400 points, which means that a KMS instance is able to handle 8 sessions (each session consumes 50 points by default) in parallel
@@ -33,6 +34,7 @@ What happens when there is not an enough number of KMS instances available? Typi
 *Autoscaling option on the PaaS GUI*
 
 First of all, if you want to have more than 1 instance of KMS, you should enable this option. Let's see together what is the meaning of the other parameters: 
+
 * ScaleInOut: defines the number of maximum instances which are going to be created over the time by the autoscaling engine. This means that if you have an increasing number of sessions, the system will instantiate new KMS instances until when this quota is reached. 
 * Scale_out_threshold: it represents the threshold which should be used as policy by the autoscaling system for triggering scaling out functionality. This value MUST always be lower than the maximum capacity each KMS instance can offer. 
 
