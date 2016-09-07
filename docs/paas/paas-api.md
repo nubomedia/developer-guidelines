@@ -102,7 +102,6 @@ When all values have been entered, click on the *Create App* button below. Your 
 
 ## Get Application logs
 
-
 ## Delete an Application
 
 
