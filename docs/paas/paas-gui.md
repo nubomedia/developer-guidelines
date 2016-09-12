@@ -6,25 +6,29 @@ This documentation describes how to use the PaaS Manager via the REST APIs.
 
 If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com).
 
-## Login 
+## Login
+
+On the login page you have the option to either login, request a new account or reset your passoword.
+
+![Paas Manager Gui - Login Page](../img/paas_login_page.jpg)
 
 Once logged in, on the start view, you should see a blue box with the number of already deployed applications. Click on *View Details*. Alternatively on the left hand side menu click on *Applications*. On the next mask above, there is a button *Create App*. The next section explains in details the procedure on creating your application.
 
-![PaaS Manager Gui - Start View](../img/paas_manager_gui.png)
+![PaaS Manager Gui - Start View](../img/paas_overview_page.jpg)
 *PaaS Manger - Start View*
 
-![PaaS Manager Gui - Start View](../img/paas_manager_gui_create_app.png)
+![PaaS Manager Gui - Start View](../img/paas_overview.jpg)
 *PaaS Manager - Create App*
 
 ## Create an Application
 
-In order to deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [sample example] (https://github.com/nubomedia/nubomedia-magic-mirror). 
+In order to deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [sample example] (https://github.com/nubomedia/nubomedia-magic-mirror).
 
 Once you have all files assembled, the *Create App* View on the PaaS Manager GUI provides you two options to create your application: a *Form* view and *JSON* view. Here the *Form* view is what you wish to use. You can build a *JSON* template of your application following the tutorial [here](paas-api.md) in section Create Application. Once you have the *JSON* file, you can submit it via the GUI.
 
 For the *Form* view, you should see a mask similar to the image below.
 
-![PaaS Manager Gui - Start View](../img/paas_manager_gui_create_app_form.png)
+![PaaS Manager Gui - Start View](../img/paas_create_app_page.png)
 *PaaS Manager - Create App - Form View*
 
 where:
@@ -76,7 +80,25 @@ where:
 
 When all values have been entered, click on the *Create App* button below. Your request will be forwarded to the PaaS Manager and you will be directed the a view similar to the image below, which shows you the status to the creation process. ```Status``` gives you the status of the process. You might want to reload this page in case you see no update to the status field. The *Load log* button shows you the real time process status from NUBOMEDIA PaaS.
 
-![PaaS Manager Gui - Start View](../img/deployed_application.png)
-*PaaS Manager - Create App - Creation status View*
+![PaaS Manager Gui - Application Overview](../img/paas_app_overview.png)
+*PaaS Manager - Create App - Application status View*
 
-Once the Status is ```RUNNING```, your application has been successfully deployed, and it is running on the PaaS. Click on  ```Applications``` -> ```app ID``` of your application. You should see the ```route``` under which your application is reachable from the browser. 
+Here you can check the number of media servers running, the autoscaling configurations and also the addons, if you have added a CDN Connector or a Cloud Repository.
+
+![PaaS Manager Gui - Application Metrics](../img/paas_app_metrics.png)
+*PaaS Manager - Create App - Application metrics View*
+
+On the Application Metrics tab you have some graphs related to the number of KMSs, memory used by each media-server and the number of media elements and media pipelines for each KMS.
+
+![PaaS Manager Gui - Application Debug](../img/paas_app_debug.png)
+*PaaS Manager - Create App - Application debug View*
+
+On this tab you can check both application logs and build logs.
+
+
+![PaaS Manager Gui - Application Settings](../img/paas_app_settings.png)
+*PaaS Manager - Create App - Application settings View*
+
+On the Application Settings tab you can check both the configuration parameters that you added at the deployment time. On this tab you can also find the delete button that would trigger the termination of your application.
+
+After you deployed one application you should check it's status on the Applications overview page. Once it's status is ```RUNNING```, your application has been successfully deployed, and it is running on the PaaS. On the Application Overview tab you have the ```route``` which represents the public endpoint of your application.
