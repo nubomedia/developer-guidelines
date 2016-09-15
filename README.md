@@ -109,7 +109,7 @@ Support
 The NUBOMEDIA community provides support through the [NUBOMEDIA Public Mailing List].
 
 [Development Guide]: http://nubomedia.readthedocs.org/
-[GitHub Issues]: https://github.com/nubomedia/developer-guidelines/issues
+[GitHub Issues]: https://github.com/nubomedia/bugtracker/issues
 [GitHub NUBOMEDIA Group]: https://github.com/nubomedia
 [LGPL v2.1 License]: http://www.gnu.org/licenses/lgpl-2.1.html
 [MkDocs]: http://www.mkdocs.org/
