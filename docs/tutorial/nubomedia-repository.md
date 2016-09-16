@@ -38,12 +38,12 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
 <dependency>
     <groupId>de.fhg.fokus.nubomedia</groupId>
     <artifactId>nubomedia-media-client</artifactId>
-    <version>1.0.2</version>
+    <version>6.5.0</version>
 </dependency>
 <dependency>
     <groupId>de.fhg.fokus.nubomedia</groupId>
     <artifactId>nubomedia-repository-client</artifactId>
-    <version>1.0</version>
+    <version>6.5.0</version>
 </dependency>
 ```
 

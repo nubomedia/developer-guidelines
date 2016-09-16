@@ -18,17 +18,17 @@ This application is open source (LGPL license) and it is available on [GitHub](h
 <dependency>
     <groupId>de.fhg.fokus.nubomedia</groupId>
     <artifactId>nubomedia-media-client</artifactId>
-    <version>1.0.2</version>
+    <version>6.5.0</version>
 </dependency>
 <dependency>
     <groupId>de.fhg.fokus.nubomedia</groupId>
     <artifactId>nubomedia-repository-client</artifactId>
-    <version>1.0</version>
+    <version>6.5.0</version>
 </dependency>
 <dependency>
   	<groupId>de.fhg.fokus.nubomedia</groupId>
-	  <artifactId>nubomedia-cdn-client</artifactId>
-	  <version>0.0.7</version>
+	<artifactId>nubomedia-cdn-client</artifactId>
+	<version>0.0.7</version>
 </dependency>
 ```
 
