@@ -26,8 +26,9 @@ pages:
     - CDN: tutorial/nubomedia-cdn.md
 - PaaS Manager:
     - Introduction: paas/paas-introduction.md
-    - PaaS API: paas/paas-api.md
     - PaaS GUI: paas/paas-gui.md
+    - Autoscaling: paas/autoscaling.md
+    - PaaS API: paas/paas-api.md
 - Media Processing:
     - Video Content Analysis (VCA): filter/video-content-analysis.md
     - Augmented Reality (AR): filter/augmented_reality.md
