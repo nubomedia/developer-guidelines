@@ -4,6 +4,31 @@ This documentation describes how to use the PaaS Manager via the exposed REST AP
 
 ## Get a token
 
+In order to request a token, you need to execute the following request: 
+
+```bash
+curl -s -u openbatonOSClient:secret -X POST http://localhost:8081/oauth/token 
+-H "Accept:application/json" 
+-d "username=admin&password=passowrd&grant_type=password“ 
+```
+
+Response: 
+```json
+{
+    "additionalInformation": {},
+    "expiration": "Sep 28, 2016 6:49:35 AM",
+    "refreshToken": {
+        "expiration": "Oct 27, 2016 6:49:35 PM",
+        "value": "7b7040a2-85cb-4791-b4e4-427f2a2a0afb"
+    },
+    "scope": [
+        "read",
+        "write"
+    ],
+    "tokenType": "bearer",
+    "value": "0e8f1ca3-2605-4eae-b229-4f886228b993"
+}
+```
 
 
 ## Create an Application
@@ -98,10 +123,100 @@ When all values have been entered, click on the *Create App* button below. Your 
 
 ## Get Application status
 
-## Get Application Debug log
+In order to check the application status you should send the following request: 
+
+```bash
+curl -X GET -H "Authorization: Bearer token-id" 
+-H "project-id: your-project-ID" 
+-H "Accept:application/json" 
+http://localhost:8081/api/v1/nubomedia/paas/app/d4fe1d69-fbe1-413c-835a-b03b36e7a21e
+```
+where: 
+- ```token-id``` can be taken from the request get token executed as before
+
+- ```your-project-ID``` can taken from the dashboard
+
+- ```url``` should be the following http://localhost:8081/api/v1/nubomedia/paas/app/app-id
+
+Example response: 
+```json
+{
+    "cdnConnector": false,
+    "cloudRepository": false,
+    "createdAt": "Sep 27, 2016 6:51:36 PM",
+    "createdBy": "admin",
+    "flavor": "MEDIUM",
+    "gitURL": "https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror-jar.git",
+    "id": "d4fe1d69-fbe1-413c-835a-b03b36e7a21e",
+    "mediaServerGroup": {
+        "floatingIPs": [
+            "80.96.122.75"
+        ],
+        "hostnames": [
+            "media-server-vnf-v631072ec-444"
+        ],
+        "id": "165c9700-a211-4abe-8bc4-59142f172a2b",
+        "nsdID": "52b34f8d-15e9-448a-9841-a11266ba63f4",
+        "nsrID": "2219e596-95b0-4115-9739-2a4af330b975"
+    },
+    "name": "magic-mirror-mp",
+    "osName": "v631072ec",
+    "podList": [],
+    "ports": [
+        8443,
+        443
+    ],
+    "projectId": "170b4875-81ba-4736-95a1-619a725643e1",
+    "projectName": "nubomedia",
+    "protocols": [
+        "TCP",
+        "TCP"
+    ],
+    "replicasNumber": 1,
+    "resourceOK": true,
+    "route": "v631072ec.paas.nubomedia.eu",
+    "scaleInOut": 3,
+    "scaleOutThreshold": 150.0,
+    "status": "RUNNING",
+    "stunServerActivate": false,
+    "targetPorts": [
+        8443,
+        443
+    ],
+    "turnServerActivate": false
+}
+
+```
+
+## Get Application build debug log
+
+In order to get the application build debug log you should send the following request: 
+
+```bash
+curl -X GET -H "Authorization: Bearer token-id" 
+-H "project-id: project-id" 
+http://localhost:8081/api/v1/nubomedia/paas/app/{app-id}/buildlogs
+```
 
 ## Get Application logs
 
+In order to get the application log you should send the following request: 
+
+```bash
+curl -X GET -H "Authorization: Bearer token-id" 
+-H "project-id: project-id" 
+http://localhost:8081/api/v1/nubomedia/paas/app/{id}/logs/{podName}
+```
+
 ## Delete an Application
+
+In order to delete an application you should send the following request: 
+
+```bash
+curl -X DELETE -H "Authorization: Bearer token-id" 
+-H "project-id: project-id" 
+http://localhost:8081//api/v1/nubomedia/paas/app/{id}
+```
+
 
 
