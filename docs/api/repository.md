@@ -20,7 +20,7 @@ The NUBOMEDIA Repository Client (NRC) is a very light weight library that provid
    <dependency>
       <groupId>de.fhg.fokus.nubomedia</groupId>
       <artifactId>nubomedia-repository-client</artifactId>
-      <version>1.0</version>
+      <version>6.5.0</version>
    </dependency>
 </dependencies>
 ```

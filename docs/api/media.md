@@ -36,7 +36,7 @@ In order to obtain the NMC, it can be done by means of [Maven](https://maven.apa
    <dependency>
       <groupId>de.fhg.fokus.nubomedia</groupId>
       <artifactId>nubomedia-media-client</artifactId>
-      <version>1.0.2</version>
+      <version>6.5.0</version>
    </dependency>
 </dependencies>
 ```
