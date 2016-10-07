@@ -163,7 +163,6 @@ FROM nubomedia/apps-baseimage:src
 
 MAINTAINER Nubomedia
 
-ADD keystore.jks /
 ADD . /home/nubomedia
 
 RUN sudo chown -R nubomedia /home/nubomedia
@@ -175,7 +174,6 @@ ENTRYPOINT cd /home/nubomedia && mvn exec:java
 Examining the  content of this file, we can how the content of the project is included into the platform:
 
 * `ADD . /home/nubomedia`: This line includes the whole content of the project.
-* `ADD keystore.jks /`: This line includes the the Java keystore to the root. This is required to serve the application by HTTPS, which is mandatory in the latest version of WebRTC in browsers. 
 
 After that, several Maven command are configured:
 
