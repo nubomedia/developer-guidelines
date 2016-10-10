@@ -61,12 +61,16 @@ In order to migrate the existing Kurento application to the NUBOMEDIA cloud, sev
   }
 ```
 
-> The instantiation of *KurentoClient* and the media logic (i.e., the media pipeline and the media element connectivity) is done in the method `startSession` of the [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class:
+> The instantiation of *KurentoClient* and the media logic (i.e., the media pipeline and the media element connectivity) is done in the method `startSession` of the [UserSession](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/UserSession.java) class. In this case, we are reserving 25 points per user session. Supposing that the application is deployed in a `MEDIUM` instance (i.e., 2 VCPUs, and therefore 200 points available), that means that it will be supported 8 concurrent sessions (200/25=8). In this example, the 9th session will raise a `NotEnoughResourcesException` (this exception is caught in the [handler](https://github.com/nubomedia/nubomedia-magic-mirror/blob/master/src/main/java/eu/nubomedia/tutorial/magicmirror/MagicMirrorHandler.java)):
 
 ```java
+  private final static int POINTS_PER_SESSION = 25;
+
   public String startSession(final WebSocketSession session, String sdpOffer) {
-    // One KurentoClient instance per session
-    kurentoClient = KurentoClient.create();
+    // One KurentoClient instance per session (reserving points per session)
+    Properties properties = new Properties();
+    properties.add("loadPoints", POINTS_PER_SESSION);
+    kurentoClient = KurentoClient.create(properties);
     log.info("Created kurentoClient (session {})", sessionId);
 
     // Media logic (pipeline and media elements connectivity)
