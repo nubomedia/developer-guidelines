@@ -172,7 +172,7 @@ ADD . /home/nubomedia
 ENTRYPOINT cd /home/nubomedia && mvn spring-boot:run
 ```
 
-Examining the  content of this file, we can how the content of the project is included into the platform:
+Examining the content of this file, we find out how the content of the project is included into the platform:
 
 * `ADD . /home/nubomedia`: This line includes the whole content of the project in the container.
 
