@@ -122,20 +122,16 @@ MAINTAINER Nubomedia
 
 ADD . /home/nubomedia
 
-RUN sudo chown -R nubomedia /home/nubomedia
-RUN cd /home/nubomedia && mvn compile
-
-ENTRYPOINT cd /home/nubomedia && mvn exec:java
+ENTRYPOINT cd /home/nubomedia && mvn spring-boot:run
 ```
 
 Examining the  content of this file, we can how the content of the project is included into the platform:
 
-* `ADD . /home/nubomedia`: This line includes the whole content of the project.
+* `ADD . /home/nubomedia`: This line includes the whole content of the project in the container.
 
-After that, several Maven command are configured:
+After that, we set the Maven command to run the application:
 
-* `RUN cd /home/nubomedia && mvn compile`: Compile the project.
-* `ENTRYPOINT cd /home/nubomedia && mvn exec:java`: Run the deployed application.
+* `ENTRYPOINT cd /home/nubomedia && mvn spring-boot:run`: Run the Spring-Boot application.
 
 
 At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](http://paas-manager.nubomedia.eu:8081/#/) (please visit the [PaaS Manager GUI section](../paas/paas-api.md) for further details).
