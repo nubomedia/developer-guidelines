@@ -66,6 +66,65 @@ The capabilities provided by the Paas Manager can be used by developers in two w
 
 The **application server** is also provided by the NUBOMEDIA PaaS. Due to the fact that the applications are made in Java, we recommend to use [Spring-Boot](http://projects.spring.io/spring-boot/) as the application server side technology. Spring-Boot embeds a Tomcat server in a simple seamless way for developers. Please take a look to the [tutorials](./tutorial/nubomedia-magic-mirror.md) for examples.
 
+# Using Maven for NUBOMEDIA applications
+
+As depicted before, NUBOMEDIA provides a complete set of **Java APIs** for developers. For this reason, it is highly recommended to use a build automation tools for the Java projects, such as **Maven**.
+
+[Maven](https://maven.apache.org/) is a build automation tool used primarily for Java projects. It addresses two aspects of building software: first, it describes how software is built (i.e. it handles the build lifecycle), and second, it describes its dependencies. Maven embraces the idea of Convention over Configuration, that is, Maven provides default values for the project's configuration:
+
+Maven project example snapshot                                     | Structure description
+-------------------------------------------------------------------| ----------------------
+![Maven project folder structure](./img/maven-project-example.png) | - The project root contains the `pom.xml`. This file (Project Object Model, POM) provides all the configuration for the project <br><br> - `src/main/java`: Contains the Java source code <br><br> - `src/main/resources`: Contains the resources for the project (e.g. property files, images, etc) <br><br> - `src/test/java`: Contains the testing Java source code (e.g. JUnit test cases) <br><br> - `src/test/resources` : Contains resources for testing <br><br> - `target`: This folder is used to house all output of the build
+
+The central piece of a Maven project configuration is the file `pom.xml`. An example is as the following:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- model version is always 4.0.0 for Maven 2.x POMs -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- project coordinates, i.e. a group of values which uniquely identify
+		this project -->
+	<groupId>eu.nubomedia.example</groupId>
+	<artifactId>maven-project-example</artifactId>
+	<version>1.0.0</version>
+
+	<!-- library dependencies -->
+	<dependencies>
+		<!-- coordinates of the required library -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
+```
+The clauses `groupId`, `artifactId`, and `version` are known as the project coordinates. This information identifies uniquely a project:
+
+- `groupId` : project group (e.g. `com.mycompany.mydivision`)
+- `artifactId` : project name (e.g. `myproject`)
+- `version` : project version. We recommend to use [semantic versioning](http://semver.org/)
+
+Each clause `dependency` identifies the library used by the Maven project using their coordinates. By default, these dependencies are downloaded from the [Maven Central repository](http://search.maven.org/) and stored in the local repository (located at `~/.m2/repository`). Each dependency can be configured using the `scope` clause. This value is used to limit the classpath and transitivity of a dependency. The most important scope values are the following:
+
+- `compile`: This is the default scope, used if none is specified. Compile dependencies are available in all classpaths of a project
+- `test`: This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution
+- `provided`: A dependency declared using this scope will be required in compilation time but not in runtime.  For example, when building a web application for the Java EE, you would set the dependency on the Servlet APIto scope provided because the web container provides that library
+
+Maven is based around the central concept of a build lifecycle. For the developer building a project, this means that it is only necessary to learn a small set of commands to build any Maven project, and the POM will ensure they get the results they desired. Each build in a Maven project is defined by a different list of build phases, wherein a build phase represents a stage in the lifecycle. The default phases in a build are the following:
+
+- `validate`: validate the project is correct and all necessary information is available
+- `compile`: compile the source code of the project
+- `test`: test the compiled source code using a suitable unit testing framework
+- `package`: take the compiled code and package it in its distributable format, such as a JAR
+- `verify`: run any checks on results of integration tests
+- `install`: install the package into the local repository
+- `deploy`: done in the build environment, copies the final package to the remote repository for sharing with other developers and projects
+
 # Running your first NUBOMEDIA application
 
 Now let's see how to deploy an application on the NUBOMEDIA PaaS. It can be done by creating the application from the scratch, but in order to make this process easier, we recommend to use one the NUBOMEDIA tutorials as template, evolving the code according to the specific needs of your app. If you are using the [Media API](./api/media.md), you can use the [magic-mirror tutorial](./tutorial/nubomedia-magic-mirror.md) to run your first application on NUBOMEDIA. Before doing that, please be aware of the following tips:
