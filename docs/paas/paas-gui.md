@@ -33,21 +33,33 @@ For the *Form* view, you should see a mask similar to the image below.
 
 where:
 
-- ```GitURL```: the Git repository URL that contains your project (source or jar), Dockerfile and other files that are necessary to run your application. If the repository is public the link has to be the HTTP version, if is private has to be the SSH version.
+-  ```Application name```: is the name of your application as you would want it to appear on the PaaS. This name is used for creating the DNS entry for your application;
 
--  ```Application name```: is the name of your application as you would want it to appear on the PaaS. This name is used for creating the DNS entry for your application.
+-  ```Number of KMS instances```: Indicates the minimum number of media servers that will be available, even if auto-scaling mechanism is used;
 
-- ```replicasNumber```: is a numeric value indicating the number of containers to be created for your application by the PaaS. This value is used for load balancing.
+- ```GitURL```: the Git repository URL that contains your project (source or jar), Dockerfile and other files that are necessary to run your application. If the repository is public the link has to be the HTTP version, if is private has to be the SSH version;
 
--  ```flavor```:  This defines the size of the KMS instances. With ```MEDIUM``` flavor, you get 2 VCPU and with ```LARGE``` flavor you have 4VCPU. The capacity is defined as 100 points for VCPU.
+-  ```flavor```:  This defines the size of the KMS instances. With ```MEDIUM``` flavor, you get 2 VCPU and with ```LARGE``` flavor you have 4VCPU. The capacity is defined as 100 points for VCPU;
 
--  ```secretName``` (optional): Indicates the name of the secret that has to be used only if your application is on a private Git repository
+-  ```secretName``` (optional): Indicates the name of the secret that has to be used only if your application is on a private Git repository;
+
+-  ```Services``` (optional): Allows you to define add-on services like mysql, rabbitmq, etc;
+
+    -  ```DockerURL```: Represents the link for the Docker file that defines the add-on service;
+    
+    -  ```Name```: Represents the name of the add-on service;
+    
+    -  ```Replicas Number```: Represents the number of containers that will run that particular service;
+    
+    -  ```Ports```: The add-on service might need to expose multiple ports;
+    
+    -  ```ENV vars```: Are environment variables that should configure the add-on service at start-up;
 
 -  ```Do you want to set the scale IN/OUT threshold?``` if checked then you are given the options to set. Please follow the [autoscaling](autoscaling.md) documentation for more details on how autoscaling works.
 
-    - ```scaleInOut```: Scale in or out indicates the MAX number of media servers (KMS) instances that will be instantiates at runtime, by the auto scaling system.
+    - ```Scale Out Limit```: Scale in or out indicates the MAX number of media servers (KMS) instances that will be instantiates at runtime, by the auto scaling system.
 
-    - ```scale_out_threshold```: This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. CHECK which flavor you are going to use before defining this threshold. 
+    - ```Scale Out Trigger```: This is the threshold (in terms of averaged number of points) which will be used for the policy of the autoscaling system. CHECK which flavor you are going to use before defining this threshold. 
 
 >>!!! info
     Do not put a value lower than the total capacity of your flavor!
@@ -82,6 +94,8 @@ When all values have been entered, click on the *Create App* button below. Your 
 
 ![PaaS Manager Gui - Application Overview](../img/paas_app_overview.png)
 *PaaS Manager - Create App - Application status View*
+
+On the Application Overview page you can see the status of your application (CREATING, BUILDING, DEPLOYING, RUNNING). Here you can also adjust the number of Media Server instances supporting your application by clicking on "Add scale out limit", or you can stop, start or remove one running Media Server from your application.
 
 Here you can check the number of media servers running, the autoscaling configurations and also the addons, if you have added a CDN Connector or a Cloud Repository.
 
