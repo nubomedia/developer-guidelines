@@ -78,7 +78,7 @@ The procedure to build from a private repository is similar to the procedure for
 
 ## Creating a Secret
 
-You can create a secret a secret a REST client via graphical interface or curl using an HTTP POST on the URL  ```http://[URL]/api/v1/nubomedia/paas/secret``` with these json object as body:
+You can store a secret via the graphical interface or via a REST client (e.g. curl) on the URL  ```http://[URL]/api/v1/nubomedia/paas/secret``` with the json as follows:
 
 ```
 "projectName":"my-project",
@@ -112,10 +112,9 @@ You can create a secret a secret a REST client via graphical interface or curl u
 }
 ```
 
-!!! info
 
-    Private key value must preserve newlines, use ```\n``` to preserve it.
+**Note** The private key value must preserve newlines, use ```\n``` to preserve it.
 
-The above is an example of what the private RSA Key looks like. Replace it with your generated private key. For more information on generating RSA private key, check the [GitHub documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
+Above is an example of what the private RSA Key looks like. Replace it with your generated private key. For more information on generating RSA private key, check the [GitHub documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
 
 The GUI (or the Http request) will return the ```secretname``` that has to be used when you want to deploy the application as described in [deploying via PaaS GUI](paas-gui.md) or in [deploying via PaaS API](paas-api.md).
