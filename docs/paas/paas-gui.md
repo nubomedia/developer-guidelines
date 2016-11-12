@@ -107,8 +107,7 @@ On the Application Metrics tab you have some graphs related to the number of KMS
 ![PaaS Manager Gui - Application Debug](../img/paas_app_debug.png)
 *PaaS Manager - Create App - Application debug View*
 
-On this tab you can check both application logs and build logs.
-
+On this tab you can check application logs, Media Server logs and application build logs.
 
 ![PaaS Manager Gui - Application Settings](../img/paas_app_settings.png)
 *PaaS Manager - Create App - Application settings View*
