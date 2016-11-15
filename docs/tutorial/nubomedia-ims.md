@@ -1,1 +1,0 @@
-# NUBOMEDIA IMS Connector Tutorial
