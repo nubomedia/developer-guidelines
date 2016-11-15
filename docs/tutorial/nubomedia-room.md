@@ -138,7 +138,7 @@ At this point, we are able to deploy our application in NUBOMEDIA. To that aim, 
 
 !!! info
 
-    The access to the PaaS Manager should be done with authentication credentials (login/password). So far, this access is restricted. If your are interested in getting access, please send an email to the [nubomedia-dev](https://groups.google.com/forum/#!forum/nubomedia-dev) list asking for permission.
+    The access to the PaaS Manager should be done with authentication credentials (login/password). The NUBOMEDIA project manages a NUBOMEDIA PaaS instance that is reserved to the institutions being part of the project. If you are not part of the NUBOMEDIA project but you want to use NUBOMEDIA you should install your very own PaaS following the [installation instructions](../tools/autonomous-installer.md).
 
 Once logged in the PaaS Manager, first we have to click on the *Create App* button inside the *Applications* section. It is very important to define the [GitHub URL](https://github.com/nubomedia/nubomedia-room-tutorial) in which the project is hosted. In this example, we are not using the scaling mechanisms and a single number of replicas:
 

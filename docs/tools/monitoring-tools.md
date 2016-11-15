@@ -1,9 +1,10 @@
 # Monitoring tools
 
 The NUBOMEDIA monitoring tools is a collection of open source software components that monitor the performance of media servers that are running multimedia applications.
+
 Also they monitor the hardware infrastructure that enables NUBOMEDIA operators to optimize the hardware utilization and energy efficiency.
 
-To access the tools you need to login on the production instance of NUBOMEDIA IaaS platform. How to access the instance is described here: [URL]( https://www.nubomedia.eu/redmine/projects/nubomedia/wiki/Accessing_NUBOMEDIA_PaaS). If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com). 
+To access the tools you need to login on the production instance of NUBOMEDIA IaaS platform. The NUBOMEDIA project manages a NUBOMEDIA PaaS instance that is reserved to the institutions being part of the project. If you are not part of the NUBOMEDIA project but you want to use NUBOMEDIA you should install your very own PaaS following the [installation instructions](../tools/autonomous-installer.md). 
 
 An architecture of monitoring tools is presented in the following figure:
 

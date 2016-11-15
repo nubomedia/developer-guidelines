@@ -57,7 +57,7 @@ NUBOMEDIA is a PaaS, as therefore it makes possible to upload, deploy and execut
 
 The capabilities provided by the Paas Manager can be used by developers in two ways:
 
-1. Using the PaaS GUI. The PaaS Manager GUI is a web application that allow to use the NUBOMEDIA PaaS Manager. This application can be found in the following [link](http://paas-manager.nubomedia.eu:8081/) (the snapshots below show some examples of this GUI). Currently the access to this application is restricted. Nevertheless, if you need access to this application, please request for the credentials using in the [NUBOMEDIA development mailing list](https://groups.google.com/forum/#!forum/nubomedia-dev).
+1. Using the PaaS GUI. The PaaS Manager GUI is a web application that allow to use the NUBOMEDIA PaaS Manager. This application can be found in the following [link](http://paas-manager.nubomedia.eu:8081/) (the snapshots below show some examples of this GUI). The NUBOMEDIA project manages a NUBOMEDIA PaaS instance that is reserved to the institutions being part of the project. If you are not part of the NUBOMEDIA project but you want to use NUBOMEDIA you should install your very own PaaS following the [installation instructions](../tools/autonomous-installer.md).
 2. Using the PaaS Manager API. In addition to the GUI, the PaaS Manager exposes its capabilities by means of a REST API. Please take a look to the [PaaS API](./paas/paas-api.md) documentation for further details.
 
 ![NUBOMEDIA PaaS Manager GUI Snapshots](./img/paas-manager.png)

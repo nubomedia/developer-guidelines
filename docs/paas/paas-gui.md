@@ -4,7 +4,7 @@ This documentation describes how to use the PaaS Manager via the REST APIs.
 
 ## Getting Started
 
-If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroups.com).
+First of all, you need access to a PaaS manager. The NUBOMEDIA project manages a NUBOMEDIA PaaS instance that is reserved to the institutions being part of the project. If you are not part of the NUBOMEDIA project but you want to use NUBOMEDIA you should install your very own PaaS following the [installation instructions](../tools/autonomous-installer.md).
 
 ## Login
 
