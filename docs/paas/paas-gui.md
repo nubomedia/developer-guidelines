@@ -8,7 +8,7 @@ If you want access to the platform [contact us](mailto:nubomedia-dev@googlegroup
 
 ## Login
 
-On the login page you have the option to either login, request a new account or reset your passoword.
+On the login page you have the option to either login, request a new account or reset your password.
 
 ![Paas Manager Gui - Login Page](../img/paas_login_page.jpg)
 
@@ -80,7 +80,7 @@ where:
 
     - ```turnServerUsername```: The username to be used as credentials to access the TURN server
 
-    - ```turnServerPassword```: The password to be used as credentail to access the TURN server
+    - ```turnServerPassword```: The password to be used as credential to access the TURN server
 
 - ```Do you want to set the Stun Server?``` If checked gives you the option to set
 
