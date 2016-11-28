@@ -76,7 +76,7 @@ Maven project example snapshot                                     | Structure d
 -------------------------------------------------------------------| ----------------------
 ![Maven project folder structure](./img/maven-project-example.png) | - The project root contains the `pom.xml`. This file (Project Object Model, POM) provides all the configuration for the project <br><br> - `src/main/java`: Contains the Java source code <br><br> - `src/main/resources`: Contains the resources for the project (e.g. property files, images, etc) <br><br> - `src/test/java`: Contains the testing Java source code (e.g. JUnit test cases) <br><br> - `src/test/resources` : Contains resources for testing <br><br> - `target`: This folder is used to house all output of the build
 
-The central piece of a Maven project configuration is the file `pom.xml`. An example is as the following:
+The central piece of a Maven project configuration is the file `pom.xml`. A template example could be as follows:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
