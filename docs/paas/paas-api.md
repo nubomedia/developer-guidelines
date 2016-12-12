@@ -33,7 +33,7 @@ Response:
 
 ## Create an Application
 
-In order to create in order words deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [example](https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror). 
+In order to create in order words deploy your application on NUBOMEDIA PaaS, it is important that you followed the previous steps provided in the [Guidelines on Building Application](https://github.com/nubomedia/developer-guidelines/blob/develop/docs/paas/paas-introduction.md) in order to understand how to create an application for NUBOMEDIA. If you made all the steps required, you should get at the end a URL of a Git repository where your Dockerfile is contained. See [example](https://github.com/nubomedia/nubomedia-magic-mirror). 
 
 Once you have all files assembled, the *Create App* View on the PaaS Manager GUI provides you two options to create your application: a *Form* view and *JSON* view. Here the *JSON* view is what you wish to use. Explanation on using the *Form* view is found [here](paas-gui.md).
 
@@ -46,7 +46,7 @@ For instantiating this application on the NUBOMEDIA PaaS you should create a JSO
 
 ```json
 {
-	"gitURL": "https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror.git",
+	"gitURL": "https://github.com/nubomedia/nubomedia-magic-mirror.git",
 	"name": "nubo-magic-mirror",
 	"cloudRepository": true,
 	"cdnConnector": true,
@@ -204,7 +204,7 @@ Example response:
         }
     ],
     "flavor": "MEDIUM",
-    "gitURL": "https://github.com/fhg-fokus-nubomedia/nubomedia-magic-mirror-jar.git",
+    "gitURL": "https://github.com/nubomedia/nubomedia-magic-mirror-jar.git",
     "id": "167dfd1b-53d4-47b4-8274-8127cf2470f2",
     "mediaServerGroup": {
         "hosts": [

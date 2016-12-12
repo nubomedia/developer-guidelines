@@ -69,9 +69,9 @@ There are several ways to use the NUBOMEDIA WebRtcPeer API:
 
 There are complete tutorials that show how to use this API in WebRTC applications developed on Java, Node and JavaScript. These tutorials are hosted on GitHub:
 
-- [Java](https://github.com/Kurento/kurento-tutorial-java)
-- [Node](https://github.com/Kurento/kurento-tutorial-node)
-- [JavaScript]( https://github.com/Kurento/kurento-tutorial-js)
+- [Java](https://github.com/nubomedia/kurento-tutorial-java)
+- [Node](https://github.com/nubomedia/kurento-tutorial-node)
+- [JavaScript]( https://github.com/nubomedia/kurento-tutorial-js)
 
 ## API Availability
 
@@ -88,11 +88,11 @@ These implementations are described in sections below in this document. These im
 Full Documentation:
 
 - [Browser WebRtcPeer](http://doc-kurento.readthedocs.org/en/stable/mastering/kurento_utils_js.html)
-- [Android WebRtcPeer](http://webrtcpeer-android.readthedocs.org/)
-- [iOS WebRtcPeer](https://github.com/nubomediaTI/Kurento-iOS)
+- [Android WebRtcPeer](http://doc-webrtcpeer-android.readthedocs.io/)
+- [iOS WebRtcPeer](http://kurento-ios.readthedocs.io/)
 
 API Source code:
 
-- [Browser WebRtcPeer](https://github.com/Kurento/kurento-utils-js)
-- [Android WebRtcPeer](http://webrtcpeer-android.readthedocs.org/)
-- [iOS WebRtcPeer](http://kurento-ios.readthedocs.org/en/latest/index.html)
+- [Browser WebRtcPeer](https://github.com/nubomedia/kurento-utils-js)
+- [Android WebRtcPeer](https://github.com/nubomedia/webrtcpeer-android)
+- [iOS WebRtcPeer](https://github.com/nubomedia/Kurento-iOS)

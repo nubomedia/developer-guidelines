@@ -43,7 +43,7 @@ easy_install pip
 pip install -r requirements.txt --upgrade
 ```
 
-You should have root access to the OpenStack environment in order to install and configure the nova-docker hypervisor and the patch for it from (https://github.com/usv-public/nubomedia-nova-docker) on the compute nodes that should run docker as a hypervisor.
+You should have root access to the OpenStack environment in order to install and configure the nova-docker hypervisor and the patch for it from (https://github.com/nubomedia/nubomedia-nova-docker) on the compute nodes that should run docker as a hypervisor.
 
 ## Update the configuration file
 
@@ -72,7 +72,7 @@ glance_endpoint = 'http://x.x.x.x:9292'
 
 ### Master SSH credentials
 
-This step is not needed if you already have nova-docker hypervisors installed on your OpenStack env. and you have applied the patch from the following repository: https://github.com/usv-public/nubomedia-nova-docker .
+This step is not needed if you already have nova-docker hypervisors installed on your OpenStack env. and you have applied the patch from the following repository: https://github.com/nubomedia/nubomedia-nova-docker .
 ```
 master_ip = 'x.x.x.x'
 master_user = 'root'

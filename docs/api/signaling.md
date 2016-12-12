@@ -100,7 +100,7 @@ The client side is also very simple to create, as it can be observed in code sni
 
 The repositories containing the relevant artifacts involved in this API are the following:
 
-- [Server signaling API](https://github.com/Kurento/kurento-java/tree/master/kurentojsonrpc)
-- [JavaScrpt signaling API](https://github.com/Kurento/kurento-jsonrpc-js)
-- [Android signaling API](https://github.com/nubomedia-vtt/jsonrpc-ws-android)
-- [iOS signaling API](https://github.com/nubomediaTI/Kurento-iOS)
+- [Server signaling API](https://github.com/nubomedia/kurento-java/tree/master/kurento-jsonrpc)
+- [JavaScrpt signaling API](https://github.com/nubomedia/kurento-jsonrpc-js)
+- [Android signaling API](https://github.com/nubomedia/jsonrpc-ws-android)
+- [iOS signaling API](https://github.com/nubomedia/Kurento-iOS)

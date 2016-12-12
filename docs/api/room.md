@@ -38,7 +38,7 @@ Full official documentation:
 
 API Source code:
 
-- [Room server API](https://github.com/Kurento/kurento-room/tree/master/kurento-room-sdk)
-- [Room JavaScript client API](https://github.com/Kurento/kurento-room/tree/master/kurento-room-client-js)
-- [Room Android client API](https://github.com/nubomedia-vtt/kurento-room-client-android)
-- [Room iOS client API](https://github.com/nubomediaTI/Kurento-iOS)
+- [Room server API](https://github.com/nubomedia/kurento-room/tree/master/kurento-room-sdk)
+- [Room JavaScript client API](https://github.com/nubomedia/kurento-room/tree/master/kurento-room-client-js)
+- [Room Android client API](https://github.com/nubomedia/kurento-room-client-android)
+- [Room iOS client API](https://github.com/nubomedia/Kurento-iOS)
