@@ -157,7 +157,7 @@ Then we need to click on the `Create App` button. The deployment should start, c
 
 *PaaS Manager deployment states*
 
-Once the deployment is finished (i.e., in the state `RUNNING`) we will be able to open the application by clicking on the provided URL by the PaaS. In addition, build and application logs can be accessed in order to trace our application, and monitoring charts are displayed to trace the resources consumption within the PaaS.
+Once the deployment is finished (i.e., in the state `RUNNING`) we will be able to open the application by clicking on the provided URL by the PaaS. In addition, build and application logs can be accessed in order to trace our application, and monitoring charts are displayed to trace the resources consumption within the PaaS. For further information about the format of the Kurento Media Server log traces please visit this [page](http://doc-kurento.readthedocs.io/en/latest/mastering/advanced_installation_guide.html#kurento-media-server-log).
 
 ![PaaS Manager Settings for Magic Mirror Tutorial](./img/hello-world-nubomedia.png)
 
