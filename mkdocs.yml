@@ -18,7 +18,7 @@ pages:
     - Tree API: api/tree.md
 - NUBOMEDIA SDKs:
     - Android SDK: sdk/android.md
-    - Android iOS: sdk/ios.md
+    - iOS SDK: sdk/ios.md
 - Tutorials:
     - Magic-Mirror: tutorial/nubomedia-magic-mirror.md
     - Repository: tutorial/nubomedia-repository.md
