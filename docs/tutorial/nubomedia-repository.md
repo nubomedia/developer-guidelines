@@ -269,7 +269,7 @@ After that, we set the Maven command to run the application:
 * `ENTRYPOINT cd /home/nubomedia && mvn spring-boot:run`: Run the Spring-Boot application.
 
 
-At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](http://paas-manager.nubomedia.eu:8081/#/) (please visit the [PaaS Manager GUI section](../paas/paas-api.md) for further details).
+At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](../paas/paas-api.md).
 
 !!! info
 

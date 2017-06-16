@@ -53,16 +53,15 @@ In the following diagram we can see how the different NUBOMEDIA APIs/SDKs fits i
 
 # NUBOMEDIA PaaS Manager
 
-NUBOMEDIA is a PaaS, as therefore it makes possible to upload, deploy and execute developers’ applications written in the **Java programming language** with the NUBOMEDIA APIs described before. NUBOMEDIA PaaS elastically provides the **service layer infrastructure** (i.e. the needed instances of KMSs and a Media repository if needed) depending on the load of the system.
+In order to install NUBOMEDIA, you can use the [NUBOMEDIA Autonomous Installer](./tools/autonomous-installer.md). NUBOMEDIA is a PaaS, as therefore it makes possible to upload, deploy and execute developers' applications written in **Java** with the NUBOMEDIA APIs described before. NUBOMEDIA PaaS elastically provides the **service layer infrastructure** (i.e. the needed instances of KMSs and a Media repository if needed) depending on the load of the system. The capabilities provided by the Paas Manager can be used by developers in two ways:
 
-The capabilities provided by the Paas Manager can be used by developers in two ways:
+1. Using the PaaS GUI. The PaaS Manager GUI is a web application that allow to use the NUBOMEDIA PaaS Manager. Please take a look to the [PaaS GUI](./paas/paas-gui.md) documentation for further details.
 
-1. Using the PaaS GUI. The PaaS Manager GUI is a web application that allow to use the NUBOMEDIA PaaS Manager. This application can be found in the following [link](http://paas-manager.nubomedia.eu:8081/) (the snapshots below show some examples of this GUI). The NUBOMEDIA project manages a NUBOMEDIA PaaS instance that is reserved to the institutions being part of the project. If you are not part of the NUBOMEDIA project but you want to use NUBOMEDIA you should install your very own PaaS following the [installation instructions](./tools/autonomous-installer.md).
 2. Using the PaaS Manager API. In addition to the GUI, the PaaS Manager exposes its capabilities by means of a REST API. Please take a look to the [PaaS API](./paas/paas-api.md) documentation for further details.
 
-![NUBOMEDIA PaaS Manager GUI Snapshots](./img/paas-manager.png)
+![NUBOMEDIA PaaS GUI Snapshots](./img/paas-manager.png)
 
-*NUBOMEDIA PaaS Manager GUI Snapshots*
+*NUBOMEDIA PaaS GUI Snapshots*
 
 The **application server** is also provided by the NUBOMEDIA PaaS. Due to the fact that the applications are made in Java, we recommend to use [Spring-Boot](http://projects.spring.io/spring-boot/) as the application server side technology. Spring-Boot embeds a Tomcat server in a simple seamless way for developers. Please take a look to the [tutorials](./tutorial/nubomedia-magic-mirror.md) for examples.
 

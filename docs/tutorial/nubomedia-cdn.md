@@ -146,7 +146,7 @@ After that, several Maven command are configured:
 * `ENTRYPOINT cd /home/nubomedia && mvn exec:java`: Run the deployed application.
 
 
-At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](http://paas-manager.nubomedia.eu:8081/#/) (please visit the [PaaS Manager GUI section](../paas/paas-api.md) for further details).
+At this point, we are able to deploy our application in NUBOMEDIA. To that aim, we can use the [PaaS Manager GUI](../paas/paas-api.md).
 
 !!! info
 
